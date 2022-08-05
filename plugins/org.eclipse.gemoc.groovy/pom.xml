@@ -15,9 +15,9 @@
 
   <parent>
     <relativePath>../../pom.xml</relativePath>
-    <groupId>org.eclipse.gemoc.gemoc-studio-modeldebugging.bundle</groupId>
+    <groupId>org.eclipse.gemoc.gemoc-studio-commons.bundle</groupId>
     <artifactId>org.eclipse.gemoc.commons.root</artifactId>
-    <version>3.3.0-SNAPSHOT</version>
+    <version>3.6.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>org.eclipse.gemoc.groovy</artifactId>
