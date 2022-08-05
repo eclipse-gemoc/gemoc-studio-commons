@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.gemoc.gemoc-studio-commons.bundle</groupId>
     <artifactId>org.eclipse.gemoc.commons.root</artifactId>
     <packaging>pom</packaging>    
-	<parent>
-		<groupId>org.eclipse.gemoc.gemoc-studio-modeldebugging.bundle</groupId>
-		<artifactId>org.eclipse.gemoc.modeldebugging.root</artifactId>
-    	<version>3.3.0-SNAPSHOT</version>
-		<relativePath>..</relativePath>
+    <parent>
+		<groupId>org.eclipse.gemoc.gemoc-studio</groupId>
+		<artifactId>gemoc_studio-eclipse-bom</artifactId>
+		<version>3.6.0-SNAPSHOT</version>
+		<relativePath>../gemoc-studio/gemoc_studio/plugins/gemoc_studio-eclipse-bom</relativePath>
 	</parent>
+    
+    <properties>
+		<tycho.scmUrl>scm:git:https://github.com/eclipse/gemoc-studio-commons.git</tycho.scmUrl>
+		<!-- <sonar.projectKey>gemoc:${project.groupId}:${project.artifactId}</sonar.projectKey>-->	
+				
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+		<maven.deploy.skip>false</maven.deploy.skip>
+	</properties>
+	
     <modules>
         <!-- plugins -->
         <module>plugins</module>
@@ -22,6 +34,140 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+            <plugin>
+            <groupId>org.eclipse.tycho</groupId>
+            <artifactId>tycho-compiler-plugin</artifactId>
+            <version>${tycho-version}</version>
+            <configuration>
+                <encoding>UTF-8</encoding>
+                <extraClasspathElements>
+                <extraClasspathElement>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-controls</artifactId>
+                    <version>11.0.2</version>
+                </extraClasspathElement>
+                <extraClasspathElement>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-swt</artifactId>
+                    <version>11.0.2</version>
+                    <systemPath>${env.JAVAFX_HOME}/lib/javafx-swt.jar</systemPath>
+                    <scope>system</scope>
+                </extraClasspathElement>
+				<extraClasspathElement>
+						<groupId>org.mapstruct</groupId>
+						<artifactId>mapstruct-processor</artifactId>
+						<version>${org.mapstruct.version}</version>
+				</extraClasspathElement>
+                </extraClasspathElements>
+            </configuration>
+            </plugin>
+			<!-- enable source bundle generation -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- enable source feature generation -->
+			<plugin>
+		      <groupId>org.eclipse.tycho.extras</groupId>
+		      <artifactId>tycho-source-feature-plugin</artifactId>
+		      <version>${tycho-version}</version>
+		      <executions>
+		        <execution>
+		          <id>source-feature</id>
+		          <phase>package</phase>
+		          <goals>
+		            <goal>source-feature</goal>
+		          </goals>
+		        </execution>
+		      </executions>
+		    </plugin>
+		    <plugin>
+		     <groupId>org.eclipse.tycho</groupId>
+		     <artifactId>tycho-p2-plugin</artifactId>
+		     <version>${tycho-version}</version>
+		     <executions>
+		       <execution>
+		         <id>attach-p2-metadata</id>
+		         <phase>package</phase>
+		         <goals>
+		           <goal>p2-metadata</goal>
+		         </goals>
+		       </execution>
+		     </executions>
+		    </plugin>
+		    <!-- enable generation of Eclipse-SourceReferences MANIFEST header -->
+		    <plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<dependencies>
+					<dependency>
+       					<groupId>org.eclipse.tycho.extras</groupId>
+			        	<artifactId>tycho-sourceref-jgit</artifactId>
+			        	<version>${tycho-version}</version>
+			      	</dependency>
+				</dependencies>
+				<configuration>
+					<sourceReferences>
+       					<generate>true</generate>
+     				</sourceReferences>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<target>
+                        <artifact>
+                            <groupId>org.eclipse.gemoc.gemoc-studio.bundle</groupId>
+                            <artifactId>org.eclipse.gemoc.gemoc_studio.targetplatform</artifactId>
+                            <version>3.6.0-SNAPSHOT</version>
+                            <classifier>gemoc_studio</classifier>
+                        </artifact>
+                    </target>
+					<!-- environments that will be built -->
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				<!-- 	<target>
+                     <artifact>
+                         <groupId>org.eclipse.gemoc</groupId>
+                         <artifactId>org.eclipse.gemoc.modeldebugging.target-platform</artifactId>
+                         <version>3.3.0-SNAPSHOT</version>
+                     </artifact>
+                 </target>-->
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.eclipse.xtend</groupId>
 				<artifactId>xtend-maven-plugin</artifactId>
 				<version>${xtend.version}</version>
@@ -29,6 +175,9 @@
 					<execution>
 						<goals>
 							<goal>compile</goal>
+							<goal>xtend-install-debug-info</goal>
+							<goal>testCompile</goal>
+							<goal>xtend-test-install-debug-info</goal>
 						</goals>
 						<configuration>
 							<outputDirectory>xtend-gen</outputDirectory>
@@ -36,10 +185,166 @@
 					</execution>
 				</executions>
 			</plugin>
+            <!-- Java compiler plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+	                <annotationProcessorPaths>
+	                    <path>
+	                        <groupId>org.mapstruct</groupId>
+	                        <artifactId>mapstruct-processor</artifactId>
+	                        <version>${org.mapstruct.version}</version>
+	                    </path>
+	                </annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<!-- Javadoc -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+				  	<!-- Default configuration for all reports -->
+              		<!-- disable javadoc checking -->
+                	<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+				<executions>
+					<execution>
+						<id>aggregate</id>
+						<goals>
+							<goal>aggregate</goal>
+					    </goals>
+					    <phase>site</phase>
+						<configuration>
+							<!-- Specific configuration for the aggregate report -->
+						    <!-- switch off dependency-driven aggregation -->
+              				<includeDependencySources>false</includeDependencySources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+             <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.5</version>
+                <configuration>
+                   <!-- <mainClass>HelloFX</mainClass>-->
+                </configuration>
+            </plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+		    		<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>11</version>
+				</plugin>
+                 <plugin>
+                    <groupId>org.openjfx</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>0.0.5</version>
+                    <configuration>
+                    <!-- <mainClass>HelloFX</mainClass>-->
+                    </configuration>
+                </plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
- 
-	<repositories>
+	
+	<profiles>
+		<profile>
+			<!-- This profile should be enabled for sonar analysis -->
+			<id>quality</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<!-- Sonar properties -->
+				<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+				<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+				<!-- Points to the target folder of the global parent project -->
+				<sonar.jacoco.reportPath>./target/jacoco.exec</sonar.jacoco.reportPath>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.5.6.201201232323</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+								<configuration>
+									<append>true</append>
+									<destFile>${sonar.jacoco.reportPath}</destFile>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	<dependencies>
+         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx</artifactId>
+            <version>11</version>
+            <type>pom</type>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>11</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>11</version>
+        </dependency>
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>xtend-maven-plugin</artifactId>
+			<version>${xtend.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.xtend</groupId>
+			<artifactId>org.eclipse.xtend.lib</artifactId>
+			<version>${xtend.version}</version>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>repo.eclipse.org</id>
+			<name>GEMOC Project Repository - Releases</name>
+			<url>https://repo.eclipse.org/content/repositories/gemoc-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>repo.eclipse.org</id>
+			<name>GEMOC Project Repository - Snapshots</name>
+			<url>https://repo.eclipse.org/content/repositories/gemoc-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
-	</repositories>
 </project>
