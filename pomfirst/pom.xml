@@ -48,8 +48,8 @@
         <!-- <module>../framework/execution_framework/pomfirst</module> -->
         <module>org.eclipse.gemoc.commons.eclipse</module>
         <module>org.eclipse.gemoc.commons.eclipse.messagingsystem.api</module>
-        <!-- <module>../commons/plugins/org.eclipse.gemoc.commons.eclipse.pde/pomfirst</module>
-        <module>../commons/plugins/org.eclipse.gemoc.commons.utils/pomfirst</module>-->
+        <!--<module>org.eclipse.gemoc.commons.eclipse.pde</module>-->
+        <!-- <module>../commons/plugins/org.eclipse.gemoc.commons.utils/pomfirst</module>-->
         <module>org.eclipse.gemoc.dsl.model</module>
 
     </modules>
