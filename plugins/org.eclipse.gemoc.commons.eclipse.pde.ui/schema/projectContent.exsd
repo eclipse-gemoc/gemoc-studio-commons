@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Schema file written by PDE -->
-<schema targetNamespace="org.eclipse.gemoc.commons.eclipse.pde" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="org.eclipse.gemoc.commons.eclipse.pde.ui" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="org.eclipse.gemoc.commons.eclipse.pde" id="projectContent" name="GEMOC Project Content Wizards"/>
+         <meta.schema plugin="org.eclipse.gemoc.commons.eclipse.pde.ui" id="projectContent" name="GEMOC Project Content Wizards"/>
       </appinfo>
       <documentation>
          This extension point provides for contributing wizards that create additional content of the K3

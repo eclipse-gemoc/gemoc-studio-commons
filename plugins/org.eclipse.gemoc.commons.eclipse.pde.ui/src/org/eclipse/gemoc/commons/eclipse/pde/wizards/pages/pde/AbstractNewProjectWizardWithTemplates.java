@@ -56,7 +56,7 @@ public abstract class AbstractNewProjectWizardWithTemplates extends Wizard{
 	public ElementList getAvailableCodegenWizards() {
 		ElementList wizards = new ElementList("CodegenWizards"); //$NON-NLS-1$
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		IExtensionPoint point = registry.getExtensionPoint(org.eclipse.gemoc.commons.eclipse.pde.Activator.PLUGIN_ID, PLUGIN_POINT);
+		IExtensionPoint point = registry.getExtensionPoint(org.eclipse.gemoc.commons.eclipse.pde.ui.Activator.PLUGIN_ID, PLUGIN_POINT);
 		if (point == null)
 			return wizards;
 		IExtension[] extensions = point.getExtensions();

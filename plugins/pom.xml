@@ -29,6 +29,7 @@
         <module>org.eclipse.gemoc.commons.eclipse.messagingsystem.api</module>
         <module>org.eclipse.gemoc.commons.eclipse.messagingsystem.ui</module>
         <module>org.eclipse.gemoc.commons.eclipse.pde</module>
+        <module>org.eclipse.gemoc.commons.eclipse.pde.ui</module>
         <module>org.eclipse.gemoc.commons.eclipse.jdt</module>
         <module>org.eclipse.gemoc.commons.eclipse.jdt.autosrcfolder</module>
         <module>org.eclipse.gemoc.commons.eclipse.ui</module>
