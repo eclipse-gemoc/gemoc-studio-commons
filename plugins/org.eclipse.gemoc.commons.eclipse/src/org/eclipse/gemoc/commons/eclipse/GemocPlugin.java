@@ -8,7 +8,7 @@
  * Contributors:
  *     Inria - initial API and implementation
  *******************************************************************************/
-package org.eclipse.gemoc.commons.eclipse.pde;
+package org.eclipse.gemoc.commons.eclipse;
 
 import java.util.ArrayList;
 
