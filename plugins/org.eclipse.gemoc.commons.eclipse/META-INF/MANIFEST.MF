@@ -6,7 +6,7 @@ Bundle-Version: 3.6.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
  org.eclipse.gemoc.commons.eclipse.messagingsystem.api;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.gemoc.commons.eclipse,
  org.eclipse.gemoc.commons.eclipse.core.resources,
