@@ -32,13 +32,13 @@
 	</developers>
 	
 	<properties>
-		<tycho.version>1.5.1</tycho.version>
-		<xtend.version>2.18.0</xtend.version>
+		<!--<tycho.version>1.5.1</tycho.version>-->
+		<xtend.version>2.25.0</xtend.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipse-repo.url>http://download.eclipse.org/releases/photon</eclipse-repo.url>
 		<gemoc-repo.url>https://download.eclipse.org/gemoc/updates/nightly</gemoc-repo.url>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 		<tycho.scmUrl>scm:git:https://github.com/eclipse/gemoc-studio-modeldebugging.git</tycho.scmUrl>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
