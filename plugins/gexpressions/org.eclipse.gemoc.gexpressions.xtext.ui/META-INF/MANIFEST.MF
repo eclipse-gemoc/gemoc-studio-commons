@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.gemoc.gexpressions.xtext.ui
 Bundle-Vendor: Eclipse GEMOC Project
-Bundle-Version: 3.3.0.qualifier
+Bundle-Version: 3.4.0.qualifier
 Bundle-SymbolicName: org.eclipse.gemoc.gexpressions.xtext.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.gemoc.gexpressions.xtext;visibility:=reexport,
@@ -12,19 +12,19 @@ Require-Bundle: org.eclipse.gemoc.gexpressions.xtext;visibility:=reexport,
  org.eclipse.xtext.ui.shared,
  org.eclipse.ui,
  org.eclipse.xtext.builder,
- org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
  org.antlr.runtime,
  org.eclipse.xtext.ui.codetemplates.ui,
- org.eclipse.compare
+ org.eclipse.compare,
+ org.eclipse.xtend.lib;bundle-version="2.14.0";resolution:=optional,
+ org.eclipse.gemoc.gexpressions.xtext.ide
 Import-Package: org.apache.log4j
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.eclipse.gemoc.gexpressions.xtext.ui,
  org.eclipse.gemoc.gexpressions.xtext.ui.contentassist,
- org.eclipse.gemoc.gexpressions.xtext.ui.contentassist.antlr,
- org.eclipse.gemoc.gexpressions.xtext.ui.contentassist.antlr.internal,
  org.eclipse.gemoc.gexpressions.xtext.ui.internal,
  org.eclipse.gemoc.gexpressions.xtext.ui.labeling,
  org.eclipse.gemoc.gexpressions.xtext.ui.outline,
  org.eclipse.gemoc.gexpressions.xtext.ui.quickfix
-Bundle-Activator: org.eclipse.gemoc.gexpressions.xtext.ui.internal.GExpressionsActivator
+Bundle-Activator: org.eclipse.gemoc.gexpressions.xtext.ui.internal.XtextActivator
 Automatic-Module-Name: org.eclipse.gemoc.gexpressions.xtext.ui

@@ -1,4 +1,4 @@
-package org.eclipse.gemoc.gexpressions.xtext.parser.antlr.internal; 
+package org.eclipse.gemoc.gexpressions.xtext.parser.antlr.internal;
 
 import org.eclipse.xtext.*;
 import org.eclipse.xtext.parser.*;
@@ -81,18 +81,18 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
      	private GExpressionsGrammarAccess grammarAccess;
-     	
+
         public InternalGExpressionsParser(TokenStream input, GExpressionsGrammarAccess grammarAccess) {
             this(input);
             this.grammarAccess = grammarAccess;
             registerRules(grammarAccess.getGrammar());
         }
-        
+
         @Override
         protected String getFirstRuleName() {
-        	return "GProgram";	
+        	return "GProgram";
        	}
-       	
+
        	@Override
        	protected GExpressionsGrammarAccess getGrammarAccess() {
        		return grammarAccess;
@@ -100,8 +100,9 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
 
+
     // $ANTLR start "entryRuleGProgram"
-    // InternalGExpressions.g:68:1: entryRuleGProgram returns [EObject current=null] : iv_ruleGProgram= ruleGProgram EOF ;
+    // InternalGExpressions.g:65:1: entryRuleGProgram returns [EObject current=null] : iv_ruleGProgram= ruleGProgram EOF ;
     public final EObject entryRuleGProgram() throws RecognitionException {
         EObject current = null;
 
@@ -109,8 +110,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:69:2: (iv_ruleGProgram= ruleGProgram EOF )
-            // InternalGExpressions.g:70:2: iv_ruleGProgram= ruleGProgram EOF
+            // InternalGExpressions.g:65:49: (iv_ruleGProgram= ruleGProgram EOF )
+            // InternalGExpressions.g:66:2: iv_ruleGProgram= ruleGProgram EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGProgramRule()); 
@@ -128,11 +129,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -141,7 +142,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGProgram"
-    // InternalGExpressions.g:77:1: ruleGProgram returns [EObject current=null] : ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? ) ;
+    // InternalGExpressions.g:72:1: ruleGProgram returns [EObject current=null] : ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? ) ;
     public final EObject ruleGProgram() throws RecognitionException {
         EObject current = null;
 
@@ -153,16 +154,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_expressions_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:80:28: ( ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? ) )
-            // InternalGExpressions.g:81:1: ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? )
+            // InternalGExpressions.g:78:2: ( ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? ) )
+            // InternalGExpressions.g:79:2: ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? )
             {
-            // InternalGExpressions.g:81:1: ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? )
-            // InternalGExpressions.g:81:2: ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )?
+            // InternalGExpressions.g:79:2: ( ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )? )
+            // InternalGExpressions.g:80:3: ( (lv_imports_0_0= ruleGImportStatement ) )* ( ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )* )?
             {
-            // InternalGExpressions.g:81:2: ( (lv_imports_0_0= ruleGImportStatement ) )*
+            // InternalGExpressions.g:80:3: ( (lv_imports_0_0= ruleGImportStatement ) )*
             loop1:
             do {
                 int alt1=2;
@@ -175,15 +177,15 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalGExpressions.g:82:1: (lv_imports_0_0= ruleGImportStatement )
+            	    // InternalGExpressions.g:81:4: (lv_imports_0_0= ruleGImportStatement )
             	    {
-            	    // InternalGExpressions.g:82:1: (lv_imports_0_0= ruleGImportStatement )
-            	    // InternalGExpressions.g:83:3: lv_imports_0_0= ruleGImportStatement
+            	    // InternalGExpressions.g:81:4: (lv_imports_0_0= ruleGImportStatement )
+            	    // InternalGExpressions.g:82:5: lv_imports_0_0= ruleGImportStatement
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGProgramAccess().getImportsGImportStatementParserRuleCall_0_0()); 
-            	      	    
+
+            	      					newCompositeNode(grammarAccess.getGProgramAccess().getImportsGImportStatementParserRuleCall_0_0());
+            	      				
             	    }
             	    pushFollow(FOLLOW_3);
             	    lv_imports_0_0=ruleGImportStatement();
@@ -192,16 +194,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGProgramRule());
-            	      	        }
-            	             		add(
-            	             			current, 
-            	             			"imports",
-            	              		lv_imports_0_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GImportStatement");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      					if (current==null) {
+            	      						current = createModelElementForParent(grammarAccess.getGProgramRule());
+            	      					}
+            	      					add(
+            	      						current,
+            	      						"imports",
+            	      						lv_imports_0_0,
+            	      						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GImportStatement");
+            	      					afterParserOrEnumRuleCall();
+            	      				
             	    }
 
             	    }
@@ -224,18 +226,18 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalGExpressions.g:99:4: ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )*
+                    // InternalGExpressions.g:100:4: ( (lv_expressions_1_0= ruleGExpression ) ) ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )*
                     {
-                    // InternalGExpressions.g:99:4: ( (lv_expressions_1_0= ruleGExpression ) )
-                    // InternalGExpressions.g:100:1: (lv_expressions_1_0= ruleGExpression )
+                    // InternalGExpressions.g:100:4: ( (lv_expressions_1_0= ruleGExpression ) )
+                    // InternalGExpressions.g:101:5: (lv_expressions_1_0= ruleGExpression )
                     {
-                    // InternalGExpressions.g:100:1: (lv_expressions_1_0= ruleGExpression )
-                    // InternalGExpressions.g:101:3: lv_expressions_1_0= ruleGExpression
+                    // InternalGExpressions.g:101:5: (lv_expressions_1_0= ruleGExpression )
+                    // InternalGExpressions.g:102:6: lv_expressions_1_0= ruleGExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getGProgramAccess().getExpressionsGExpressionParserRuleCall_1_0_0()); 
-                      	    
+
+                      						newCompositeNode(grammarAccess.getGProgramAccess().getExpressionsGExpressionParserRuleCall_1_0_0());
+                      					
                     }
                     pushFollow(FOLLOW_4);
                     lv_expressions_1_0=ruleGExpression();
@@ -244,16 +246,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getGProgramRule());
-                      	        }
-                             		add(
-                             			current, 
-                             			"expressions",
-                              		lv_expressions_1_0, 
-                              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-                      	        afterParserOrEnumRuleCall();
-                      	    
+                      						if (current==null) {
+                      							current = createModelElementForParent(grammarAccess.getGProgramRule());
+                      						}
+                      						add(
+                      							current,
+                      							"expressions",
+                      							lv_expressions_1_0,
+                      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+                      						afterParserOrEnumRuleCall();
+                      					
                     }
 
                     }
@@ -261,7 +263,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGExpressions.g:117:2: ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )*
+                    // InternalGExpressions.g:119:4: ( (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) ) )*
                     loop3:
                     do {
                         int alt3=2;
@@ -274,9 +276,9 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // InternalGExpressions.g:117:3: (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) )
+                    	    // InternalGExpressions.g:120:5: (otherlv_2= ';' )? ( (lv_expressions_3_0= ruleGExpression ) )
                     	    {
-                    	    // InternalGExpressions.g:117:3: (otherlv_2= ';' )?
+                    	    // InternalGExpressions.g:120:5: (otherlv_2= ';' )?
                     	    int alt2=2;
                     	    int LA2_0 = input.LA(1);
 
@@ -285,13 +287,13 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     	    }
                     	    switch (alt2) {
                     	        case 1 :
-                    	            // InternalGExpressions.g:117:5: otherlv_2= ';'
+                    	            // InternalGExpressions.g:121:6: otherlv_2= ';'
                     	            {
                     	            otherlv_2=(Token)match(input,13,FOLLOW_5); if (state.failed) return current;
                     	            if ( state.backtracking==0 ) {
 
-                    	                  	newLeafNode(otherlv_2, grammarAccess.getGProgramAccess().getSemicolonKeyword_1_1_0());
-                    	                  
+                    	              						newLeafNode(otherlv_2, grammarAccess.getGProgramAccess().getSemicolonKeyword_1_1_0());
+                    	              					
                     	            }
 
                     	            }
@@ -299,16 +301,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // InternalGExpressions.g:121:3: ( (lv_expressions_3_0= ruleGExpression ) )
-                    	    // InternalGExpressions.g:122:1: (lv_expressions_3_0= ruleGExpression )
+                    	    // InternalGExpressions.g:126:5: ( (lv_expressions_3_0= ruleGExpression ) )
+                    	    // InternalGExpressions.g:127:6: (lv_expressions_3_0= ruleGExpression )
                     	    {
-                    	    // InternalGExpressions.g:122:1: (lv_expressions_3_0= ruleGExpression )
-                    	    // InternalGExpressions.g:123:3: lv_expressions_3_0= ruleGExpression
+                    	    // InternalGExpressions.g:127:6: (lv_expressions_3_0= ruleGExpression )
+                    	    // InternalGExpressions.g:128:7: lv_expressions_3_0= ruleGExpression
                     	    {
                     	    if ( state.backtracking==0 ) {
-                    	       
-                    	      	        newCompositeNode(grammarAccess.getGProgramAccess().getExpressionsGExpressionParserRuleCall_1_1_1_0()); 
-                    	      	    
+
+                    	      							newCompositeNode(grammarAccess.getGProgramAccess().getExpressionsGExpressionParserRuleCall_1_1_1_0());
+                    	      						
                     	    }
                     	    pushFollow(FOLLOW_4);
                     	    lv_expressions_3_0=ruleGExpression();
@@ -317,16 +319,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     	    if (state.failed) return current;
                     	    if ( state.backtracking==0 ) {
 
-                    	      	        if (current==null) {
-                    	      	            current = createModelElementForParent(grammarAccess.getGProgramRule());
-                    	      	        }
-                    	             		add(
-                    	             			current, 
-                    	             			"expressions",
-                    	              		lv_expressions_3_0, 
-                    	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-                    	      	        afterParserOrEnumRuleCall();
-                    	      	    
+                    	      							if (current==null) {
+                    	      								current = createModelElementForParent(grammarAccess.getGProgramRule());
+                    	      							}
+                    	      							add(
+                    	      								current,
+                    	      								"expressions",
+                    	      								lv_expressions_3_0,
+                    	      								"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+                    	      							afterParserOrEnumRuleCall();
+                    	      						
                     	    }
 
                     	    }
@@ -356,14 +358,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -372,7 +376,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGImportStatement"
-    // InternalGExpressions.g:147:1: entryRuleGImportStatement returns [EObject current=null] : iv_ruleGImportStatement= ruleGImportStatement EOF ;
+    // InternalGExpressions.g:151:1: entryRuleGImportStatement returns [EObject current=null] : iv_ruleGImportStatement= ruleGImportStatement EOF ;
     public final EObject entryRuleGImportStatement() throws RecognitionException {
         EObject current = null;
 
@@ -380,8 +384,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:148:2: (iv_ruleGImportStatement= ruleGImportStatement EOF )
-            // InternalGExpressions.g:149:2: iv_ruleGImportStatement= ruleGImportStatement EOF
+            // InternalGExpressions.g:151:57: (iv_ruleGImportStatement= ruleGImportStatement EOF )
+            // InternalGExpressions.g:152:2: iv_ruleGImportStatement= ruleGImportStatement EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGImportStatementRule()); 
@@ -399,11 +403,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -412,51 +416,52 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGImportStatement"
-    // InternalGExpressions.g:156:1: ruleGImportStatement returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) ;
+    // InternalGExpressions.g:158:1: ruleGImportStatement returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleGImportStatement() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_importURI_1_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:159:28: ( (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) )
-            // InternalGExpressions.g:160:1: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
+            // InternalGExpressions.g:164:2: ( (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) ) )
+            // InternalGExpressions.g:165:2: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
             {
-            // InternalGExpressions.g:160:1: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
-            // InternalGExpressions.g:160:3: otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) )
+            // InternalGExpressions.g:165:2: (otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) ) )
+            // InternalGExpressions.g:166:3: otherlv_0= 'import' ( (lv_importURI_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,14,FOLLOW_6); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_0, grammarAccess.getGImportStatementAccess().getImportKeyword_0());
-                  
+              			newLeafNode(otherlv_0, grammarAccess.getGImportStatementAccess().getImportKeyword_0());
+              		
             }
-            // InternalGExpressions.g:164:1: ( (lv_importURI_1_0= RULE_STRING ) )
-            // InternalGExpressions.g:165:1: (lv_importURI_1_0= RULE_STRING )
+            // InternalGExpressions.g:170:3: ( (lv_importURI_1_0= RULE_STRING ) )
+            // InternalGExpressions.g:171:4: (lv_importURI_1_0= RULE_STRING )
             {
-            // InternalGExpressions.g:165:1: (lv_importURI_1_0= RULE_STRING )
-            // InternalGExpressions.g:166:3: lv_importURI_1_0= RULE_STRING
+            // InternalGExpressions.g:171:4: (lv_importURI_1_0= RULE_STRING )
+            // InternalGExpressions.g:172:5: lv_importURI_1_0= RULE_STRING
             {
             lv_importURI_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_importURI_1_0, grammarAccess.getGImportStatementAccess().getImportURISTRINGTerminalRuleCall_1_0()); 
-              		
+              					newLeafNode(lv_importURI_1_0, grammarAccess.getGImportStatementAccess().getImportURISTRINGTerminalRuleCall_1_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getGImportStatementRule());
-              	        }
-                     		setWithLastConsumed(
-                     			current, 
-                     			"importURI",
-                      		lv_importURI_1_0, 
-                      		"org.eclipse.xtext.common.Terminals.STRING");
-              	    
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGImportStatementRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"importURI",
+              						lv_importURI_1_0,
+              						"org.eclipse.xtext.common.Terminals.STRING");
+              				
             }
 
             }
@@ -471,14 +476,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -487,7 +494,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGExpression"
-    // InternalGExpressions.g:190:1: entryRuleGExpression returns [EObject current=null] : iv_ruleGExpression= ruleGExpression EOF ;
+    // InternalGExpressions.g:192:1: entryRuleGExpression returns [EObject current=null] : iv_ruleGExpression= ruleGExpression EOF ;
     public final EObject entryRuleGExpression() throws RecognitionException {
         EObject current = null;
 
@@ -495,8 +502,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:191:2: (iv_ruleGExpression= ruleGExpression EOF )
-            // InternalGExpressions.g:192:2: iv_ruleGExpression= ruleGExpression EOF
+            // InternalGExpressions.g:192:52: (iv_ruleGExpression= ruleGExpression EOF )
+            // InternalGExpressions.g:193:2: iv_ruleGExpression= ruleGExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGExpressionRule()); 
@@ -514,11 +521,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -534,16 +541,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_GOrExpression_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:202:28: (this_GOrExpression_0= ruleGOrExpression )
-            // InternalGExpressions.g:204:5: this_GOrExpression_0= ruleGOrExpression
+            // InternalGExpressions.g:205:2: (this_GOrExpression_0= ruleGOrExpression )
+            // InternalGExpressions.g:206:2: this_GOrExpression_0= ruleGOrExpression
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGExpressionAccess().getGOrExpressionParserRuleCall()); 
-                  
+
+              		newCompositeNode(grammarAccess.getGExpressionAccess().getGOrExpressionParserRuleCall());
+              	
             }
             pushFollow(FOLLOW_2);
             this_GOrExpression_0=ruleGOrExpression();
@@ -551,23 +559,25 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GOrExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              		current = this_GOrExpression_0;
+              		afterParserOrEnumRuleCall();
+              	
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -576,7 +586,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGOrExpression"
-    // InternalGExpressions.g:220:1: entryRuleGOrExpression returns [EObject current=null] : iv_ruleGOrExpression= ruleGOrExpression EOF ;
+    // InternalGExpressions.g:217:1: entryRuleGOrExpression returns [EObject current=null] : iv_ruleGOrExpression= ruleGOrExpression EOF ;
     public final EObject entryRuleGOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -584,8 +594,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:221:2: (iv_ruleGOrExpression= ruleGOrExpression EOF )
-            // InternalGExpressions.g:222:2: iv_ruleGOrExpression= ruleGOrExpression EOF
+            // InternalGExpressions.g:217:54: (iv_ruleGOrExpression= ruleGOrExpression EOF )
+            // InternalGExpressions.g:218:2: iv_ruleGOrExpression= ruleGOrExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGOrExpressionRule()); 
@@ -603,11 +613,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -616,7 +626,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGOrExpression"
-    // InternalGExpressions.g:229:1: ruleGOrExpression returns [EObject current=null] : (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* ) ;
+    // InternalGExpressions.g:224:1: ruleGOrExpression returns [EObject current=null] : (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* ) ;
     public final EObject ruleGOrExpression() throws RecognitionException {
         EObject current = null;
 
@@ -627,19 +637,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:232:28: ( (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* ) )
-            // InternalGExpressions.g:233:1: (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* )
+            // InternalGExpressions.g:230:2: ( (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* ) )
+            // InternalGExpressions.g:231:2: (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* )
             {
-            // InternalGExpressions.g:233:1: (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* )
-            // InternalGExpressions.g:234:5: this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )*
+            // InternalGExpressions.g:231:2: (this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )* )
+            // InternalGExpressions.g:232:3: this_GXorExpression_0= ruleGXorExpression ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGOrExpressionAccess().getGXorExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGOrExpressionAccess().getGXorExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_7);
             this_GXorExpression_0=ruleGXorExpression();
@@ -647,12 +658,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GXorExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GXorExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:242:1: ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )*
+            // InternalGExpressions.g:240:3: ( () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) ) )*
             loop5:
             do {
                 int alt5=2;
@@ -665,31 +676,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalGExpressions.g:242:2: () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) )
+            	    // InternalGExpressions.g:241:4: () ( (lv_operator_2_0= ruleGOrOperator ) ) ( (lv_rightOperand_3_0= ruleGXorExpression ) )
             	    {
-            	    // InternalGExpressions.g:242:2: ()
-            	    // InternalGExpressions.g:243:5: 
+            	    // InternalGExpressions.g:241:4: ()
+            	    // InternalGExpressions.g:242:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGOrExpressionAccess().getGOrExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGOrExpressionAccess().getGOrExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:248:2: ( (lv_operator_2_0= ruleGOrOperator ) )
-            	    // InternalGExpressions.g:249:1: (lv_operator_2_0= ruleGOrOperator )
+            	    // InternalGExpressions.g:248:4: ( (lv_operator_2_0= ruleGOrOperator ) )
+            	    // InternalGExpressions.g:249:5: (lv_operator_2_0= ruleGOrOperator )
             	    {
-            	    // InternalGExpressions.g:249:1: (lv_operator_2_0= ruleGOrOperator )
-            	    // InternalGExpressions.g:250:3: lv_operator_2_0= ruleGOrOperator
+            	    // InternalGExpressions.g:249:5: (lv_operator_2_0= ruleGOrOperator )
+            	    // InternalGExpressions.g:250:6: lv_operator_2_0= ruleGOrOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGOrExpressionAccess().getOperatorGOrOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGOrExpressionAccess().getOperatorGOrOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGOrOperator();
@@ -698,16 +709,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGOrExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GOrOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGOrExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GOrOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -715,16 +726,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:266:2: ( (lv_rightOperand_3_0= ruleGXorExpression ) )
-            	    // InternalGExpressions.g:267:1: (lv_rightOperand_3_0= ruleGXorExpression )
+            	    // InternalGExpressions.g:267:4: ( (lv_rightOperand_3_0= ruleGXorExpression ) )
+            	    // InternalGExpressions.g:268:5: (lv_rightOperand_3_0= ruleGXorExpression )
             	    {
-            	    // InternalGExpressions.g:267:1: (lv_rightOperand_3_0= ruleGXorExpression )
-            	    // InternalGExpressions.g:268:3: lv_rightOperand_3_0= ruleGXorExpression
+            	    // InternalGExpressions.g:268:5: (lv_rightOperand_3_0= ruleGXorExpression )
+            	    // InternalGExpressions.g:269:6: lv_rightOperand_3_0= ruleGXorExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGOrExpressionAccess().getRightOperandGXorExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGOrExpressionAccess().getRightOperandGXorExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_7);
             	    lv_rightOperand_3_0=ruleGXorExpression();
@@ -733,16 +744,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGOrExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GXorExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGOrExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GXorExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -766,14 +777,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -782,7 +795,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGXorExpression"
-    // InternalGExpressions.g:292:1: entryRuleGXorExpression returns [EObject current=null] : iv_ruleGXorExpression= ruleGXorExpression EOF ;
+    // InternalGExpressions.g:291:1: entryRuleGXorExpression returns [EObject current=null] : iv_ruleGXorExpression= ruleGXorExpression EOF ;
     public final EObject entryRuleGXorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -790,8 +803,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:293:2: (iv_ruleGXorExpression= ruleGXorExpression EOF )
-            // InternalGExpressions.g:294:2: iv_ruleGXorExpression= ruleGXorExpression EOF
+            // InternalGExpressions.g:291:55: (iv_ruleGXorExpression= ruleGXorExpression EOF )
+            // InternalGExpressions.g:292:2: iv_ruleGXorExpression= ruleGXorExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGXorExpressionRule()); 
@@ -809,11 +822,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -822,7 +835,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGXorExpression"
-    // InternalGExpressions.g:301:1: ruleGXorExpression returns [EObject current=null] : (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* ) ;
+    // InternalGExpressions.g:298:1: ruleGXorExpression returns [EObject current=null] : (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* ) ;
     public final EObject ruleGXorExpression() throws RecognitionException {
         EObject current = null;
 
@@ -833,19 +846,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:304:28: ( (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* ) )
-            // InternalGExpressions.g:305:1: (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* )
+            // InternalGExpressions.g:304:2: ( (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* ) )
+            // InternalGExpressions.g:305:2: (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* )
             {
-            // InternalGExpressions.g:305:1: (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* )
-            // InternalGExpressions.g:306:5: this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )*
+            // InternalGExpressions.g:305:2: (this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )* )
+            // InternalGExpressions.g:306:3: this_GAndExpression_0= ruleGAndExpression ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGXorExpressionAccess().getGAndExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGXorExpressionAccess().getGAndExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_8);
             this_GAndExpression_0=ruleGAndExpression();
@@ -853,12 +867,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GAndExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GAndExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:314:1: ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )*
+            // InternalGExpressions.g:314:3: ( () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) ) )*
             loop6:
             do {
                 int alt6=2;
@@ -871,31 +885,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalGExpressions.g:314:2: () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) )
+            	    // InternalGExpressions.g:315:4: () ( (lv_operator_2_0= ruleGXorOperator ) ) ( (lv_rightOperand_3_0= ruleGAndExpression ) )
             	    {
-            	    // InternalGExpressions.g:314:2: ()
-            	    // InternalGExpressions.g:315:5: 
+            	    // InternalGExpressions.g:315:4: ()
+            	    // InternalGExpressions.g:316:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGXorExpressionAccess().getGXorExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGXorExpressionAccess().getGXorExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:320:2: ( (lv_operator_2_0= ruleGXorOperator ) )
-            	    // InternalGExpressions.g:321:1: (lv_operator_2_0= ruleGXorOperator )
+            	    // InternalGExpressions.g:322:4: ( (lv_operator_2_0= ruleGXorOperator ) )
+            	    // InternalGExpressions.g:323:5: (lv_operator_2_0= ruleGXorOperator )
             	    {
-            	    // InternalGExpressions.g:321:1: (lv_operator_2_0= ruleGXorOperator )
-            	    // InternalGExpressions.g:322:3: lv_operator_2_0= ruleGXorOperator
+            	    // InternalGExpressions.g:323:5: (lv_operator_2_0= ruleGXorOperator )
+            	    // InternalGExpressions.g:324:6: lv_operator_2_0= ruleGXorOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGXorExpressionAccess().getOperatorGXorOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGXorExpressionAccess().getOperatorGXorOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGXorOperator();
@@ -904,16 +918,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGXorExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GXorOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGXorExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GXorOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -921,16 +935,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:338:2: ( (lv_rightOperand_3_0= ruleGAndExpression ) )
-            	    // InternalGExpressions.g:339:1: (lv_rightOperand_3_0= ruleGAndExpression )
+            	    // InternalGExpressions.g:341:4: ( (lv_rightOperand_3_0= ruleGAndExpression ) )
+            	    // InternalGExpressions.g:342:5: (lv_rightOperand_3_0= ruleGAndExpression )
             	    {
-            	    // InternalGExpressions.g:339:1: (lv_rightOperand_3_0= ruleGAndExpression )
-            	    // InternalGExpressions.g:340:3: lv_rightOperand_3_0= ruleGAndExpression
+            	    // InternalGExpressions.g:342:5: (lv_rightOperand_3_0= ruleGAndExpression )
+            	    // InternalGExpressions.g:343:6: lv_rightOperand_3_0= ruleGAndExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGXorExpressionAccess().getRightOperandGAndExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGXorExpressionAccess().getRightOperandGAndExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_8);
             	    lv_rightOperand_3_0=ruleGAndExpression();
@@ -939,16 +953,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGXorExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAndExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGXorExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAndExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -972,14 +986,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -988,7 +1004,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGAndExpression"
-    // InternalGExpressions.g:364:1: entryRuleGAndExpression returns [EObject current=null] : iv_ruleGAndExpression= ruleGAndExpression EOF ;
+    // InternalGExpressions.g:365:1: entryRuleGAndExpression returns [EObject current=null] : iv_ruleGAndExpression= ruleGAndExpression EOF ;
     public final EObject entryRuleGAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -996,7 +1012,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:365:2: (iv_ruleGAndExpression= ruleGAndExpression EOF )
+            // InternalGExpressions.g:365:55: (iv_ruleGAndExpression= ruleGAndExpression EOF )
             // InternalGExpressions.g:366:2: iv_ruleGAndExpression= ruleGAndExpression EOF
             {
             if ( state.backtracking==0 ) {
@@ -1015,11 +1031,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1028,7 +1044,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGAndExpression"
-    // InternalGExpressions.g:373:1: ruleGAndExpression returns [EObject current=null] : (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* ) ;
+    // InternalGExpressions.g:372:1: ruleGAndExpression returns [EObject current=null] : (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* ) ;
     public final EObject ruleGAndExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1039,19 +1055,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:376:28: ( (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* ) )
-            // InternalGExpressions.g:377:1: (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* )
+            // InternalGExpressions.g:378:2: ( (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* ) )
+            // InternalGExpressions.g:379:2: (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* )
             {
-            // InternalGExpressions.g:377:1: (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* )
-            // InternalGExpressions.g:378:5: this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )*
+            // InternalGExpressions.g:379:2: (this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )* )
+            // InternalGExpressions.g:380:3: this_GEqualityExpression_0= ruleGEqualityExpression ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGAndExpressionAccess().getGEqualityExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGAndExpressionAccess().getGEqualityExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_9);
             this_GEqualityExpression_0=ruleGEqualityExpression();
@@ -1059,12 +1076,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GEqualityExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GEqualityExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:386:1: ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )*
+            // InternalGExpressions.g:388:3: ( () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -1077,31 +1094,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalGExpressions.g:386:2: () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) )
+            	    // InternalGExpressions.g:389:4: () ( (lv_operator_2_0= ruleGAndOperator ) ) ( (lv_rightOperand_3_0= ruleGEqualityExpression ) )
             	    {
-            	    // InternalGExpressions.g:386:2: ()
-            	    // InternalGExpressions.g:387:5: 
+            	    // InternalGExpressions.g:389:4: ()
+            	    // InternalGExpressions.g:390:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGAndExpressionAccess().getGAndExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGAndExpressionAccess().getGAndExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:392:2: ( (lv_operator_2_0= ruleGAndOperator ) )
-            	    // InternalGExpressions.g:393:1: (lv_operator_2_0= ruleGAndOperator )
+            	    // InternalGExpressions.g:396:4: ( (lv_operator_2_0= ruleGAndOperator ) )
+            	    // InternalGExpressions.g:397:5: (lv_operator_2_0= ruleGAndOperator )
             	    {
-            	    // InternalGExpressions.g:393:1: (lv_operator_2_0= ruleGAndOperator )
-            	    // InternalGExpressions.g:394:3: lv_operator_2_0= ruleGAndOperator
+            	    // InternalGExpressions.g:397:5: (lv_operator_2_0= ruleGAndOperator )
+            	    // InternalGExpressions.g:398:6: lv_operator_2_0= ruleGAndOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGAndExpressionAccess().getOperatorGAndOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGAndExpressionAccess().getOperatorGAndOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGAndOperator();
@@ -1110,16 +1127,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGAndExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAndOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGAndExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAndOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1127,16 +1144,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:410:2: ( (lv_rightOperand_3_0= ruleGEqualityExpression ) )
-            	    // InternalGExpressions.g:411:1: (lv_rightOperand_3_0= ruleGEqualityExpression )
+            	    // InternalGExpressions.g:415:4: ( (lv_rightOperand_3_0= ruleGEqualityExpression ) )
+            	    // InternalGExpressions.g:416:5: (lv_rightOperand_3_0= ruleGEqualityExpression )
             	    {
-            	    // InternalGExpressions.g:411:1: (lv_rightOperand_3_0= ruleGEqualityExpression )
-            	    // InternalGExpressions.g:412:3: lv_rightOperand_3_0= ruleGEqualityExpression
+            	    // InternalGExpressions.g:416:5: (lv_rightOperand_3_0= ruleGEqualityExpression )
+            	    // InternalGExpressions.g:417:6: lv_rightOperand_3_0= ruleGEqualityExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGAndExpressionAccess().getRightOperandGEqualityExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGAndExpressionAccess().getRightOperandGEqualityExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_9);
             	    lv_rightOperand_3_0=ruleGEqualityExpression();
@@ -1145,16 +1162,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGAndExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GEqualityExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGAndExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GEqualityExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1178,14 +1195,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1194,7 +1213,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGEqualityExpression"
-    // InternalGExpressions.g:436:1: entryRuleGEqualityExpression returns [EObject current=null] : iv_ruleGEqualityExpression= ruleGEqualityExpression EOF ;
+    // InternalGExpressions.g:439:1: entryRuleGEqualityExpression returns [EObject current=null] : iv_ruleGEqualityExpression= ruleGEqualityExpression EOF ;
     public final EObject entryRuleGEqualityExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1202,8 +1221,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:437:2: (iv_ruleGEqualityExpression= ruleGEqualityExpression EOF )
-            // InternalGExpressions.g:438:2: iv_ruleGEqualityExpression= ruleGEqualityExpression EOF
+            // InternalGExpressions.g:439:60: (iv_ruleGEqualityExpression= ruleGEqualityExpression EOF )
+            // InternalGExpressions.g:440:2: iv_ruleGEqualityExpression= ruleGEqualityExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGEqualityExpressionRule()); 
@@ -1221,11 +1240,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1234,7 +1253,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGEqualityExpression"
-    // InternalGExpressions.g:445:1: ruleGEqualityExpression returns [EObject current=null] : (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* ) ;
+    // InternalGExpressions.g:446:1: ruleGEqualityExpression returns [EObject current=null] : (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* ) ;
     public final EObject ruleGEqualityExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1245,19 +1264,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:448:28: ( (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* ) )
-            // InternalGExpressions.g:449:1: (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* )
+            // InternalGExpressions.g:452:2: ( (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* ) )
+            // InternalGExpressions.g:453:2: (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* )
             {
-            // InternalGExpressions.g:449:1: (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* )
-            // InternalGExpressions.g:450:5: this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )*
+            // InternalGExpressions.g:453:2: (this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )* )
+            // InternalGExpressions.g:454:3: this_GRelationExpression_0= ruleGRelationExpression ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getGRelationExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getGRelationExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_10);
             this_GRelationExpression_0=ruleGRelationExpression();
@@ -1265,12 +1285,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GRelationExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GRelationExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:458:1: ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )*
+            // InternalGExpressions.g:462:3: ( () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1283,31 +1303,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalGExpressions.g:458:2: () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) )
+            	    // InternalGExpressions.g:463:4: () ( (lv_operator_2_0= ruleGEqualityOperator ) ) ( (lv_rightOperand_3_0= ruleGRelationExpression ) )
             	    {
-            	    // InternalGExpressions.g:458:2: ()
-            	    // InternalGExpressions.g:459:5: 
+            	    // InternalGExpressions.g:463:4: ()
+            	    // InternalGExpressions.g:464:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGEqualityExpressionAccess().getGEqualityExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGEqualityExpressionAccess().getGEqualityExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:464:2: ( (lv_operator_2_0= ruleGEqualityOperator ) )
-            	    // InternalGExpressions.g:465:1: (lv_operator_2_0= ruleGEqualityOperator )
+            	    // InternalGExpressions.g:470:4: ( (lv_operator_2_0= ruleGEqualityOperator ) )
+            	    // InternalGExpressions.g:471:5: (lv_operator_2_0= ruleGEqualityOperator )
             	    {
-            	    // InternalGExpressions.g:465:1: (lv_operator_2_0= ruleGEqualityOperator )
-            	    // InternalGExpressions.g:466:3: lv_operator_2_0= ruleGEqualityOperator
+            	    // InternalGExpressions.g:471:5: (lv_operator_2_0= ruleGEqualityOperator )
+            	    // InternalGExpressions.g:472:6: lv_operator_2_0= ruleGEqualityOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getOperatorGEqualityOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getOperatorGEqualityOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGEqualityOperator();
@@ -1316,16 +1336,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGEqualityExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GEqualityOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGEqualityExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GEqualityOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1333,16 +1353,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:482:2: ( (lv_rightOperand_3_0= ruleGRelationExpression ) )
-            	    // InternalGExpressions.g:483:1: (lv_rightOperand_3_0= ruleGRelationExpression )
+            	    // InternalGExpressions.g:489:4: ( (lv_rightOperand_3_0= ruleGRelationExpression ) )
+            	    // InternalGExpressions.g:490:5: (lv_rightOperand_3_0= ruleGRelationExpression )
             	    {
-            	    // InternalGExpressions.g:483:1: (lv_rightOperand_3_0= ruleGRelationExpression )
-            	    // InternalGExpressions.g:484:3: lv_rightOperand_3_0= ruleGRelationExpression
+            	    // InternalGExpressions.g:490:5: (lv_rightOperand_3_0= ruleGRelationExpression )
+            	    // InternalGExpressions.g:491:6: lv_rightOperand_3_0= ruleGRelationExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getRightOperandGRelationExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGEqualityExpressionAccess().getRightOperandGRelationExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_10);
             	    lv_rightOperand_3_0=ruleGRelationExpression();
@@ -1351,16 +1371,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGEqualityExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GRelationExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGEqualityExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GRelationExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1384,14 +1404,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1400,7 +1422,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGRelationExpression"
-    // InternalGExpressions.g:508:1: entryRuleGRelationExpression returns [EObject current=null] : iv_ruleGRelationExpression= ruleGRelationExpression EOF ;
+    // InternalGExpressions.g:513:1: entryRuleGRelationExpression returns [EObject current=null] : iv_ruleGRelationExpression= ruleGRelationExpression EOF ;
     public final EObject entryRuleGRelationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1408,8 +1430,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:509:2: (iv_ruleGRelationExpression= ruleGRelationExpression EOF )
-            // InternalGExpressions.g:510:2: iv_ruleGRelationExpression= ruleGRelationExpression EOF
+            // InternalGExpressions.g:513:60: (iv_ruleGRelationExpression= ruleGRelationExpression EOF )
+            // InternalGExpressions.g:514:2: iv_ruleGRelationExpression= ruleGRelationExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGRelationExpressionRule()); 
@@ -1427,11 +1449,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1440,7 +1462,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGRelationExpression"
-    // InternalGExpressions.g:517:1: ruleGRelationExpression returns [EObject current=null] : (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* ) ;
+    // InternalGExpressions.g:520:1: ruleGRelationExpression returns [EObject current=null] : (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* ) ;
     public final EObject ruleGRelationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1451,19 +1473,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:520:28: ( (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* ) )
-            // InternalGExpressions.g:521:1: (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* )
+            // InternalGExpressions.g:526:2: ( (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* ) )
+            // InternalGExpressions.g:527:2: (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* )
             {
-            // InternalGExpressions.g:521:1: (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* )
-            // InternalGExpressions.g:522:5: this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )*
+            // InternalGExpressions.g:527:2: (this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )* )
+            // InternalGExpressions.g:528:3: this_GAdditionExpression_0= ruleGAdditionExpression ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGRelationExpressionAccess().getGAdditionExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGRelationExpressionAccess().getGAdditionExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_11);
             this_GAdditionExpression_0=ruleGAdditionExpression();
@@ -1471,12 +1494,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GAdditionExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GAdditionExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:530:1: ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )*
+            // InternalGExpressions.g:536:3: ( () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1489,31 +1512,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalGExpressions.g:530:2: () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) )
+            	    // InternalGExpressions.g:537:4: () ( (lv_operator_2_0= ruleGRelationOperator ) ) ( (lv_rightOperand_3_0= ruleGAdditionExpression ) )
             	    {
-            	    // InternalGExpressions.g:530:2: ()
-            	    // InternalGExpressions.g:531:5: 
+            	    // InternalGExpressions.g:537:4: ()
+            	    // InternalGExpressions.g:538:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGRelationExpressionAccess().getGRelationExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGRelationExpressionAccess().getGRelationExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:536:2: ( (lv_operator_2_0= ruleGRelationOperator ) )
-            	    // InternalGExpressions.g:537:1: (lv_operator_2_0= ruleGRelationOperator )
+            	    // InternalGExpressions.g:544:4: ( (lv_operator_2_0= ruleGRelationOperator ) )
+            	    // InternalGExpressions.g:545:5: (lv_operator_2_0= ruleGRelationOperator )
             	    {
-            	    // InternalGExpressions.g:537:1: (lv_operator_2_0= ruleGRelationOperator )
-            	    // InternalGExpressions.g:538:3: lv_operator_2_0= ruleGRelationOperator
+            	    // InternalGExpressions.g:545:5: (lv_operator_2_0= ruleGRelationOperator )
+            	    // InternalGExpressions.g:546:6: lv_operator_2_0= ruleGRelationOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGRelationExpressionAccess().getOperatorGRelationOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGRelationExpressionAccess().getOperatorGRelationOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGRelationOperator();
@@ -1522,16 +1545,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGRelationExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GRelationOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGRelationExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GRelationOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1539,16 +1562,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:554:2: ( (lv_rightOperand_3_0= ruleGAdditionExpression ) )
-            	    // InternalGExpressions.g:555:1: (lv_rightOperand_3_0= ruleGAdditionExpression )
+            	    // InternalGExpressions.g:563:4: ( (lv_rightOperand_3_0= ruleGAdditionExpression ) )
+            	    // InternalGExpressions.g:564:5: (lv_rightOperand_3_0= ruleGAdditionExpression )
             	    {
-            	    // InternalGExpressions.g:555:1: (lv_rightOperand_3_0= ruleGAdditionExpression )
-            	    // InternalGExpressions.g:556:3: lv_rightOperand_3_0= ruleGAdditionExpression
+            	    // InternalGExpressions.g:564:5: (lv_rightOperand_3_0= ruleGAdditionExpression )
+            	    // InternalGExpressions.g:565:6: lv_rightOperand_3_0= ruleGAdditionExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGRelationExpressionAccess().getRightOperandGAdditionExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGRelationExpressionAccess().getRightOperandGAdditionExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_11);
             	    lv_rightOperand_3_0=ruleGAdditionExpression();
@@ -1557,16 +1580,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGRelationExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAdditionExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGRelationExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAdditionExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1590,14 +1613,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1606,7 +1631,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGAdditionExpression"
-    // InternalGExpressions.g:580:1: entryRuleGAdditionExpression returns [EObject current=null] : iv_ruleGAdditionExpression= ruleGAdditionExpression EOF ;
+    // InternalGExpressions.g:587:1: entryRuleGAdditionExpression returns [EObject current=null] : iv_ruleGAdditionExpression= ruleGAdditionExpression EOF ;
     public final EObject entryRuleGAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1614,8 +1639,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:581:2: (iv_ruleGAdditionExpression= ruleGAdditionExpression EOF )
-            // InternalGExpressions.g:582:2: iv_ruleGAdditionExpression= ruleGAdditionExpression EOF
+            // InternalGExpressions.g:587:60: (iv_ruleGAdditionExpression= ruleGAdditionExpression EOF )
+            // InternalGExpressions.g:588:2: iv_ruleGAdditionExpression= ruleGAdditionExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGAdditionExpressionRule()); 
@@ -1633,11 +1658,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1646,7 +1671,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGAdditionExpression"
-    // InternalGExpressions.g:589:1: ruleGAdditionExpression returns [EObject current=null] : (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* ) ;
+    // InternalGExpressions.g:594:1: ruleGAdditionExpression returns [EObject current=null] : (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* ) ;
     public final EObject ruleGAdditionExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1657,19 +1682,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:592:28: ( (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* ) )
-            // InternalGExpressions.g:593:1: (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* )
+            // InternalGExpressions.g:600:2: ( (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* ) )
+            // InternalGExpressions.g:601:2: (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* )
             {
-            // InternalGExpressions.g:593:1: (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* )
-            // InternalGExpressions.g:594:5: this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )*
+            // InternalGExpressions.g:601:2: (this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )* )
+            // InternalGExpressions.g:602:3: this_GMultiplicationExpression_0= ruleGMultiplicationExpression ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getGMultiplicationExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getGMultiplicationExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_12);
             this_GMultiplicationExpression_0=ruleGMultiplicationExpression();
@@ -1677,12 +1703,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GMultiplicationExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GMultiplicationExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:602:1: ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )*
+            // InternalGExpressions.g:610:3: ( () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1695,31 +1721,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalGExpressions.g:602:2: () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) )
+            	    // InternalGExpressions.g:611:4: () ( (lv_operator_2_0= ruleGAdditionOperator ) ) ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) )
             	    {
-            	    // InternalGExpressions.g:602:2: ()
-            	    // InternalGExpressions.g:603:5: 
+            	    // InternalGExpressions.g:611:4: ()
+            	    // InternalGExpressions.g:612:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGAdditionExpressionAccess().getGAdditionExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGAdditionExpressionAccess().getGAdditionExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:608:2: ( (lv_operator_2_0= ruleGAdditionOperator ) )
-            	    // InternalGExpressions.g:609:1: (lv_operator_2_0= ruleGAdditionOperator )
+            	    // InternalGExpressions.g:618:4: ( (lv_operator_2_0= ruleGAdditionOperator ) )
+            	    // InternalGExpressions.g:619:5: (lv_operator_2_0= ruleGAdditionOperator )
             	    {
-            	    // InternalGExpressions.g:609:1: (lv_operator_2_0= ruleGAdditionOperator )
-            	    // InternalGExpressions.g:610:3: lv_operator_2_0= ruleGAdditionOperator
+            	    // InternalGExpressions.g:619:5: (lv_operator_2_0= ruleGAdditionOperator )
+            	    // InternalGExpressions.g:620:6: lv_operator_2_0= ruleGAdditionOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getOperatorGAdditionOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getOperatorGAdditionOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGAdditionOperator();
@@ -1728,16 +1754,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGAdditionExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAdditionOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGAdditionExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GAdditionOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1745,16 +1771,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:626:2: ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) )
-            	    // InternalGExpressions.g:627:1: (lv_rightOperand_3_0= ruleGMultiplicationExpression )
+            	    // InternalGExpressions.g:637:4: ( (lv_rightOperand_3_0= ruleGMultiplicationExpression ) )
+            	    // InternalGExpressions.g:638:5: (lv_rightOperand_3_0= ruleGMultiplicationExpression )
             	    {
-            	    // InternalGExpressions.g:627:1: (lv_rightOperand_3_0= ruleGMultiplicationExpression )
-            	    // InternalGExpressions.g:628:3: lv_rightOperand_3_0= ruleGMultiplicationExpression
+            	    // InternalGExpressions.g:638:5: (lv_rightOperand_3_0= ruleGMultiplicationExpression )
+            	    // InternalGExpressions.g:639:6: lv_rightOperand_3_0= ruleGMultiplicationExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getRightOperandGMultiplicationExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGAdditionExpressionAccess().getRightOperandGMultiplicationExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_12);
             	    lv_rightOperand_3_0=ruleGMultiplicationExpression();
@@ -1763,16 +1789,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGAdditionExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GMultiplicationExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGAdditionExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GMultiplicationExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1796,14 +1822,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1812,7 +1840,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGMultiplicationExpression"
-    // InternalGExpressions.g:652:1: entryRuleGMultiplicationExpression returns [EObject current=null] : iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF ;
+    // InternalGExpressions.g:661:1: entryRuleGMultiplicationExpression returns [EObject current=null] : iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF ;
     public final EObject entryRuleGMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1820,8 +1848,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:653:2: (iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF )
-            // InternalGExpressions.g:654:2: iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF
+            // InternalGExpressions.g:661:66: (iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF )
+            // InternalGExpressions.g:662:2: iv_ruleGMultiplicationExpression= ruleGMultiplicationExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGMultiplicationExpressionRule()); 
@@ -1839,11 +1867,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -1852,7 +1880,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGMultiplicationExpression"
-    // InternalGExpressions.g:661:1: ruleGMultiplicationExpression returns [EObject current=null] : (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* ) ;
+    // InternalGExpressions.g:668:1: ruleGMultiplicationExpression returns [EObject current=null] : (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* ) ;
     public final EObject ruleGMultiplicationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1863,19 +1891,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_rightOperand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:664:28: ( (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* ) )
-            // InternalGExpressions.g:665:1: (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* )
+            // InternalGExpressions.g:674:2: ( (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* ) )
+            // InternalGExpressions.g:675:2: (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* )
             {
-            // InternalGExpressions.g:665:1: (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* )
-            // InternalGExpressions.g:666:5: this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )*
+            // InternalGExpressions.g:675:2: (this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )* )
+            // InternalGExpressions.g:676:3: this_GNegationExpression_0= ruleGNegationExpression ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getGNegationExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getGNegationExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_13);
             this_GNegationExpression_0=ruleGNegationExpression();
@@ -1883,12 +1912,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GNegationExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GNegationExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:674:1: ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )*
+            // InternalGExpressions.g:684:3: ( () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) ) )*
             loop11:
             do {
                 int alt11=2;
@@ -1901,31 +1930,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalGExpressions.g:674:2: () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) )
+            	    // InternalGExpressions.g:685:4: () ( (lv_operator_2_0= ruleGMultiplicationOperator ) ) ( (lv_rightOperand_3_0= ruleGNegationExpression ) )
             	    {
-            	    // InternalGExpressions.g:674:2: ()
-            	    // InternalGExpressions.g:675:5: 
+            	    // InternalGExpressions.g:685:4: ()
+            	    // InternalGExpressions.g:686:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGMultiplicationExpressionAccess().getGMultiplicationExpressionLeftOperandAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGMultiplicationExpressionAccess().getGMultiplicationExpressionLeftOperandAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
-            	    // InternalGExpressions.g:680:2: ( (lv_operator_2_0= ruleGMultiplicationOperator ) )
-            	    // InternalGExpressions.g:681:1: (lv_operator_2_0= ruleGMultiplicationOperator )
+            	    // InternalGExpressions.g:692:4: ( (lv_operator_2_0= ruleGMultiplicationOperator ) )
+            	    // InternalGExpressions.g:693:5: (lv_operator_2_0= ruleGMultiplicationOperator )
             	    {
-            	    // InternalGExpressions.g:681:1: (lv_operator_2_0= ruleGMultiplicationOperator )
-            	    // InternalGExpressions.g:682:3: lv_operator_2_0= ruleGMultiplicationOperator
+            	    // InternalGExpressions.g:693:5: (lv_operator_2_0= ruleGMultiplicationOperator )
+            	    // InternalGExpressions.g:694:6: lv_operator_2_0= ruleGMultiplicationOperator
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getOperatorGMultiplicationOperatorEnumRuleCall_1_1_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getOperatorGMultiplicationOperatorEnumRuleCall_1_1_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_5);
             	    lv_operator_2_0=ruleGMultiplicationOperator();
@@ -1934,16 +1963,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGMultiplicationExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"operator",
-            	              		lv_operator_2_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GMultiplicationOperator");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGMultiplicationExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"operator",
+            	      							lv_operator_2_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GMultiplicationOperator");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -1951,16 +1980,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalGExpressions.g:698:2: ( (lv_rightOperand_3_0= ruleGNegationExpression ) )
-            	    // InternalGExpressions.g:699:1: (lv_rightOperand_3_0= ruleGNegationExpression )
+            	    // InternalGExpressions.g:711:4: ( (lv_rightOperand_3_0= ruleGNegationExpression ) )
+            	    // InternalGExpressions.g:712:5: (lv_rightOperand_3_0= ruleGNegationExpression )
             	    {
-            	    // InternalGExpressions.g:699:1: (lv_rightOperand_3_0= ruleGNegationExpression )
-            	    // InternalGExpressions.g:700:3: lv_rightOperand_3_0= ruleGNegationExpression
+            	    // InternalGExpressions.g:712:5: (lv_rightOperand_3_0= ruleGNegationExpression )
+            	    // InternalGExpressions.g:713:6: lv_rightOperand_3_0= ruleGNegationExpression
             	    {
             	    if ( state.backtracking==0 ) {
-            	       
-            	      	        newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getRightOperandGNegationExpressionParserRuleCall_1_2_0()); 
-            	      	    
+
+            	      						newCompositeNode(grammarAccess.getGMultiplicationExpressionAccess().getRightOperandGNegationExpressionParserRuleCall_1_2_0());
+            	      					
             	    }
             	    pushFollow(FOLLOW_13);
             	    lv_rightOperand_3_0=ruleGNegationExpression();
@@ -1969,16 +1998,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      	        if (current==null) {
-            	      	            current = createModelElementForParent(grammarAccess.getGMultiplicationExpressionRule());
-            	      	        }
-            	             		set(
-            	             			current, 
-            	             			"rightOperand",
-            	              		lv_rightOperand_3_0, 
-            	              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNegationExpression");
-            	      	        afterParserOrEnumRuleCall();
-            	      	    
+            	      						if (current==null) {
+            	      							current = createModelElementForParent(grammarAccess.getGMultiplicationExpressionRule());
+            	      						}
+            	      						set(
+            	      							current,
+            	      							"rightOperand",
+            	      							lv_rightOperand_3_0,
+            	      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNegationExpression");
+            	      						afterParserOrEnumRuleCall();
+            	      					
             	    }
 
             	    }
@@ -2002,14 +2031,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2018,7 +2049,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGNegationExpression"
-    // InternalGExpressions.g:724:1: entryRuleGNegationExpression returns [EObject current=null] : iv_ruleGNegationExpression= ruleGNegationExpression EOF ;
+    // InternalGExpressions.g:735:1: entryRuleGNegationExpression returns [EObject current=null] : iv_ruleGNegationExpression= ruleGNegationExpression EOF ;
     public final EObject entryRuleGNegationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2026,8 +2057,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:725:2: (iv_ruleGNegationExpression= ruleGNegationExpression EOF )
-            // InternalGExpressions.g:726:2: iv_ruleGNegationExpression= ruleGNegationExpression EOF
+            // InternalGExpressions.g:735:60: (iv_ruleGNegationExpression= ruleGNegationExpression EOF )
+            // InternalGExpressions.g:736:2: iv_ruleGNegationExpression= ruleGNegationExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGNegationExpressionRule()); 
@@ -2045,11 +2076,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2058,7 +2089,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGNegationExpression"
-    // InternalGExpressions.g:733:1: ruleGNegationExpression returns [EObject current=null] : (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) ) ;
+    // InternalGExpressions.g:742:1: ruleGNegationExpression returns [EObject current=null] : (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) ) ;
     public final EObject ruleGNegationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2069,13 +2100,14 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_operand_3_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:736:28: ( (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) ) )
-            // InternalGExpressions.g:737:1: (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) )
+            // InternalGExpressions.g:748:2: ( (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) ) )
+            // InternalGExpressions.g:749:2: (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) )
             {
-            // InternalGExpressions.g:737:1: (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) )
+            // InternalGExpressions.g:749:2: (this_GNavigationExpression_0= ruleGNavigationExpression | ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -2094,12 +2126,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalGExpressions.g:738:5: this_GNavigationExpression_0= ruleGNavigationExpression
+                    // InternalGExpressions.g:750:3: this_GNavigationExpression_0= ruleGNavigationExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGNegationExpressionAccess().getGNavigationExpressionParserRuleCall_0()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGNegationExpressionAccess().getGNavigationExpressionParserRuleCall_0());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GNavigationExpression_0=ruleGNavigationExpression();
@@ -2107,43 +2139,43 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GNavigationExpression_0; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GNavigationExpression_0;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:747:6: ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) )
+                    // InternalGExpressions.g:759:3: ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) )
                     {
-                    // InternalGExpressions.g:747:6: ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) )
-                    // InternalGExpressions.g:747:7: () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) )
+                    // InternalGExpressions.g:759:3: ( () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) ) )
+                    // InternalGExpressions.g:760:4: () ( (lv_operator_2_0= ruleGNegationOperator ) ) ( (lv_operand_3_0= ruleGNavigationExpression ) )
                     {
-                    // InternalGExpressions.g:747:7: ()
-                    // InternalGExpressions.g:748:5: 
+                    // InternalGExpressions.g:760:4: ()
+                    // InternalGExpressions.g:761:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                              current = forceCreateModelElement(
-                                  grammarAccess.getGNegationExpressionAccess().getGNegationExpressionAction_1_0(),
-                                  current);
-                          
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getGNegationExpressionAccess().getGNegationExpressionAction_1_0(),
+                      						current);
+                      				
                     }
 
                     }
 
-                    // InternalGExpressions.g:753:2: ( (lv_operator_2_0= ruleGNegationOperator ) )
-                    // InternalGExpressions.g:754:1: (lv_operator_2_0= ruleGNegationOperator )
+                    // InternalGExpressions.g:767:4: ( (lv_operator_2_0= ruleGNegationOperator ) )
+                    // InternalGExpressions.g:768:5: (lv_operator_2_0= ruleGNegationOperator )
                     {
-                    // InternalGExpressions.g:754:1: (lv_operator_2_0= ruleGNegationOperator )
-                    // InternalGExpressions.g:755:3: lv_operator_2_0= ruleGNegationOperator
+                    // InternalGExpressions.g:768:5: (lv_operator_2_0= ruleGNegationOperator )
+                    // InternalGExpressions.g:769:6: lv_operator_2_0= ruleGNegationOperator
                     {
                     if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getGNegationExpressionAccess().getOperatorGNegationOperatorEnumRuleCall_1_1_0()); 
-                      	    
+
+                      						newCompositeNode(grammarAccess.getGNegationExpressionAccess().getOperatorGNegationOperatorEnumRuleCall_1_1_0());
+                      					
                     }
                     pushFollow(FOLLOW_14);
                     lv_operator_2_0=ruleGNegationOperator();
@@ -2152,16 +2184,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getGNegationExpressionRule());
-                      	        }
-                             		set(
-                             			current, 
-                             			"operator",
-                              		lv_operator_2_0, 
-                              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNegationOperator");
-                      	        afterParserOrEnumRuleCall();
-                      	    
+                      						if (current==null) {
+                      							current = createModelElementForParent(grammarAccess.getGNegationExpressionRule());
+                      						}
+                      						set(
+                      							current,
+                      							"operator",
+                      							lv_operator_2_0,
+                      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNegationOperator");
+                      						afterParserOrEnumRuleCall();
+                      					
                     }
 
                     }
@@ -2169,16 +2201,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalGExpressions.g:771:2: ( (lv_operand_3_0= ruleGNavigationExpression ) )
-                    // InternalGExpressions.g:772:1: (lv_operand_3_0= ruleGNavigationExpression )
+                    // InternalGExpressions.g:786:4: ( (lv_operand_3_0= ruleGNavigationExpression ) )
+                    // InternalGExpressions.g:787:5: (lv_operand_3_0= ruleGNavigationExpression )
                     {
-                    // InternalGExpressions.g:772:1: (lv_operand_3_0= ruleGNavigationExpression )
-                    // InternalGExpressions.g:773:3: lv_operand_3_0= ruleGNavigationExpression
+                    // InternalGExpressions.g:787:5: (lv_operand_3_0= ruleGNavigationExpression )
+                    // InternalGExpressions.g:788:6: lv_operand_3_0= ruleGNavigationExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                      	        newCompositeNode(grammarAccess.getGNegationExpressionAccess().getOperandGNavigationExpressionParserRuleCall_1_2_0()); 
-                      	    
+
+                      						newCompositeNode(grammarAccess.getGNegationExpressionAccess().getOperandGNavigationExpressionParserRuleCall_1_2_0());
+                      					
                     }
                     pushFollow(FOLLOW_2);
                     lv_operand_3_0=ruleGNavigationExpression();
@@ -2187,16 +2219,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      	        if (current==null) {
-                      	            current = createModelElementForParent(grammarAccess.getGNegationExpressionRule());
-                      	        }
-                             		set(
-                             			current, 
-                             			"operand",
-                              		lv_operand_3_0, 
-                              		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNavigationExpression");
-                      	        afterParserOrEnumRuleCall();
-                      	    
+                      						if (current==null) {
+                      							current = createModelElementForParent(grammarAccess.getGNegationExpressionRule());
+                      						}
+                      						set(
+                      							current,
+                      							"operand",
+                      							lv_operand_3_0,
+                      							"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GNavigationExpression");
+                      						afterParserOrEnumRuleCall();
+                      					
                     }
 
                     }
@@ -2217,14 +2249,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2233,7 +2267,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGNavigationExpression"
-    // InternalGExpressions.g:797:1: entryRuleGNavigationExpression returns [EObject current=null] : iv_ruleGNavigationExpression= ruleGNavigationExpression EOF ;
+    // InternalGExpressions.g:810:1: entryRuleGNavigationExpression returns [EObject current=null] : iv_ruleGNavigationExpression= ruleGNavigationExpression EOF ;
     public final EObject entryRuleGNavigationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2241,8 +2275,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:798:2: (iv_ruleGNavigationExpression= ruleGNavigationExpression EOF )
-            // InternalGExpressions.g:799:2: iv_ruleGNavigationExpression= ruleGNavigationExpression EOF
+            // InternalGExpressions.g:810:62: (iv_ruleGNavigationExpression= ruleGNavigationExpression EOF )
+            // InternalGExpressions.g:811:2: iv_ruleGNavigationExpression= ruleGNavigationExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGNavigationExpressionRule()); 
@@ -2260,11 +2294,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2273,7 +2307,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGNavigationExpression"
-    // InternalGExpressions.g:806:1: ruleGNavigationExpression returns [EObject current=null] : (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* ) ;
+    // InternalGExpressions.g:817:1: ruleGNavigationExpression returns [EObject current=null] : (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* ) ;
     public final EObject ruleGNavigationExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2281,19 +2315,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_GReferenceExpression_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:809:28: ( (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* ) )
-            // InternalGExpressions.g:810:1: (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* )
+            // InternalGExpressions.g:823:2: ( (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* ) )
+            // InternalGExpressions.g:824:2: (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* )
             {
-            // InternalGExpressions.g:810:1: (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* )
-            // InternalGExpressions.g:811:5: this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )*
+            // InternalGExpressions.g:824:2: (this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )* )
+            // InternalGExpressions.g:825:3: this_GReferenceExpression_0= ruleGReferenceExpression ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )*
             {
             if ( state.backtracking==0 ) {
-               
-                      newCompositeNode(grammarAccess.getGNavigationExpressionAccess().getGReferenceExpressionParserRuleCall_0()); 
-                  
+
+              			newCompositeNode(grammarAccess.getGNavigationExpressionAccess().getGReferenceExpressionParserRuleCall_0());
+              		
             }
             pushFollow(FOLLOW_15);
             this_GReferenceExpression_0=ruleGReferenceExpression();
@@ -2301,12 +2336,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-                      current = this_GReferenceExpression_0; 
-                      afterParserOrEnumRuleCall();
-                  
+
+              			current = this_GReferenceExpression_0;
+              			afterParserOrEnumRuleCall();
+              		
             }
-            // InternalGExpressions.g:819:1: ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )*
+            // InternalGExpressions.g:833:3: ( () ruleNavigationOperator ( (otherlv_3= RULE_ID ) ) )*
             loop13:
             do {
                 int alt13=2;
@@ -2319,25 +2354,25 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalGExpressions.g:819:2: () ruleNavigationOperator ( (otherlv_3= RULE_ID ) )
+            	    // InternalGExpressions.g:834:4: () ruleNavigationOperator ( (otherlv_3= RULE_ID ) )
             	    {
-            	    // InternalGExpressions.g:819:2: ()
-            	    // InternalGExpressions.g:820:5: 
+            	    // InternalGExpressions.g:834:4: ()
+            	    // InternalGExpressions.g:835:5: 
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	              current = forceCreateModelElementAndSet(
-            	                  grammarAccess.getGNavigationExpressionAccess().getGNavigationExpressionBodyAction_1_0(),
-            	                  current);
-            	          
+            	      					current = forceCreateModelElementAndSet(
+            	      						grammarAccess.getGNavigationExpressionAccess().getGNavigationExpressionBodyAction_1_0(),
+            	      						current);
+            	      				
             	    }
 
             	    }
 
             	    if ( state.backtracking==0 ) {
-            	       
-            	              newCompositeNode(grammarAccess.getGNavigationExpressionAccess().getNavigationOperatorParserRuleCall_1_1()); 
-            	          
+
+            	      				newCompositeNode(grammarAccess.getGNavigationExpressionAccess().getNavigationOperatorParserRuleCall_1_1());
+            	      			
             	    }
             	    pushFollow(FOLLOW_16);
             	    ruleNavigationOperator();
@@ -2345,28 +2380,28 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    state._fsp--;
             	    if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
-            	       
-            	              afterParserOrEnumRuleCall();
-            	          
+
+            	      				afterParserOrEnumRuleCall();
+            	      			
             	    }
-            	    // InternalGExpressions.g:833:1: ( (otherlv_3= RULE_ID ) )
-            	    // InternalGExpressions.g:834:1: (otherlv_3= RULE_ID )
+            	    // InternalGExpressions.g:848:4: ( (otherlv_3= RULE_ID ) )
+            	    // InternalGExpressions.g:849:5: (otherlv_3= RULE_ID )
             	    {
-            	    // InternalGExpressions.g:834:1: (otherlv_3= RULE_ID )
-            	    // InternalGExpressions.g:835:3: otherlv_3= RULE_ID
+            	    // InternalGExpressions.g:849:5: (otherlv_3= RULE_ID )
+            	    // InternalGExpressions.g:850:6: otherlv_3= RULE_ID
             	    {
             	    if ( state.backtracking==0 ) {
 
-            	      			if (current==null) {
-            	      	            current = createModelElement(grammarAccess.getGNavigationExpressionRule());
-            	      	        }
-            	              
+            	      						if (current==null) {
+            	      							current = createModelElement(grammarAccess.getGNavigationExpressionRule());
+            	      						}
+            	      					
             	    }
             	    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_15); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		newLeafNode(otherlv_3, grammarAccess.getGNavigationExpressionAccess().getReferencedEObjectEObjectCrossReference_1_2_0()); 
-            	      	
+            	      						newLeafNode(otherlv_3, grammarAccess.getGNavigationExpressionAccess().getReferencedEObjectEObjectCrossReference_1_2_0());
+            	      					
             	    }
 
             	    }
@@ -2390,14 +2425,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2406,7 +2443,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGReferenceExpression"
-    // InternalGExpressions.g:854:1: entryRuleGReferenceExpression returns [EObject current=null] : iv_ruleGReferenceExpression= ruleGReferenceExpression EOF ;
+    // InternalGExpressions.g:866:1: entryRuleGReferenceExpression returns [EObject current=null] : iv_ruleGReferenceExpression= ruleGReferenceExpression EOF ;
     public final EObject entryRuleGReferenceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2414,8 +2451,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:855:2: (iv_ruleGReferenceExpression= ruleGReferenceExpression EOF )
-            // InternalGExpressions.g:856:2: iv_ruleGReferenceExpression= ruleGReferenceExpression EOF
+            // InternalGExpressions.g:866:61: (iv_ruleGReferenceExpression= ruleGReferenceExpression EOF )
+            // InternalGExpressions.g:867:2: iv_ruleGReferenceExpression= ruleGReferenceExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGReferenceExpressionRule()); 
@@ -2433,11 +2470,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2446,7 +2483,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGReferenceExpression"
-    // InternalGExpressions.g:863:1: ruleGReferenceExpression returns [EObject current=null] : (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) ) ;
+    // InternalGExpressions.g:873:1: ruleGReferenceExpression returns [EObject current=null] : (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) ) ;
     public final EObject ruleGReferenceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2454,13 +2491,14 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_GPrimaryExpression_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:866:28: ( (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) ) )
-            // InternalGExpressions.g:867:1: (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) )
+            // InternalGExpressions.g:879:2: ( (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) ) )
+            // InternalGExpressions.g:880:2: (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) )
             {
-            // InternalGExpressions.g:867:1: (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) )
+            // InternalGExpressions.g:880:2: (this_GPrimaryExpression_0= ruleGPrimaryExpression | ( () ( (otherlv_2= RULE_ID ) ) ) )
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2479,12 +2517,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalGExpressions.g:868:5: this_GPrimaryExpression_0= ruleGPrimaryExpression
+                    // InternalGExpressions.g:881:3: this_GPrimaryExpression_0= ruleGPrimaryExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGReferenceExpressionAccess().getGPrimaryExpressionParserRuleCall_0()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGReferenceExpressionAccess().getGPrimaryExpressionParserRuleCall_0());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GPrimaryExpression_0=ruleGPrimaryExpression();
@@ -2492,51 +2530,51 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GPrimaryExpression_0; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GPrimaryExpression_0;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:877:6: ( () ( (otherlv_2= RULE_ID ) ) )
+                    // InternalGExpressions.g:890:3: ( () ( (otherlv_2= RULE_ID ) ) )
                     {
-                    // InternalGExpressions.g:877:6: ( () ( (otherlv_2= RULE_ID ) ) )
-                    // InternalGExpressions.g:877:7: () ( (otherlv_2= RULE_ID ) )
+                    // InternalGExpressions.g:890:3: ( () ( (otherlv_2= RULE_ID ) ) )
+                    // InternalGExpressions.g:891:4: () ( (otherlv_2= RULE_ID ) )
                     {
-                    // InternalGExpressions.g:877:7: ()
-                    // InternalGExpressions.g:878:5: 
+                    // InternalGExpressions.g:891:4: ()
+                    // InternalGExpressions.g:892:5: 
                     {
                     if ( state.backtracking==0 ) {
 
-                              current = forceCreateModelElement(
-                                  grammarAccess.getGReferenceExpressionAccess().getGReferenceExpressionAction_1_0(),
-                                  current);
-                          
+                      					current = forceCreateModelElement(
+                      						grammarAccess.getGReferenceExpressionAccess().getGReferenceExpressionAction_1_0(),
+                      						current);
+                      				
                     }
 
                     }
 
-                    // InternalGExpressions.g:883:2: ( (otherlv_2= RULE_ID ) )
-                    // InternalGExpressions.g:884:1: (otherlv_2= RULE_ID )
+                    // InternalGExpressions.g:898:4: ( (otherlv_2= RULE_ID ) )
+                    // InternalGExpressions.g:899:5: (otherlv_2= RULE_ID )
                     {
-                    // InternalGExpressions.g:884:1: (otherlv_2= RULE_ID )
-                    // InternalGExpressions.g:885:3: otherlv_2= RULE_ID
+                    // InternalGExpressions.g:899:5: (otherlv_2= RULE_ID )
+                    // InternalGExpressions.g:900:6: otherlv_2= RULE_ID
                     {
                     if ( state.backtracking==0 ) {
 
-                      			if (current==null) {
-                      	            current = createModelElement(grammarAccess.getGReferenceExpressionRule());
-                      	        }
-                              
+                      						if (current==null) {
+                      							current = createModelElement(grammarAccess.getGReferenceExpressionRule());
+                      						}
+                      					
                     }
                     otherlv_2=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      		newLeafNode(otherlv_2, grammarAccess.getGReferenceExpressionAccess().getReferencedEObjectEObjectCrossReference_1_1_0()); 
-                      	
+                      						newLeafNode(otherlv_2, grammarAccess.getGReferenceExpressionAccess().getReferencedEObjectEObjectCrossReference_1_1_0());
+                      					
                     }
 
                     }
@@ -2557,14 +2595,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2573,7 +2613,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGPrimaryExpression"
-    // InternalGExpressions.g:904:1: entryRuleGPrimaryExpression returns [EObject current=null] : iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF ;
+    // InternalGExpressions.g:916:1: entryRuleGPrimaryExpression returns [EObject current=null] : iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF ;
     public final EObject entryRuleGPrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2581,8 +2621,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:905:2: (iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF )
-            // InternalGExpressions.g:906:2: iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF
+            // InternalGExpressions.g:916:59: (iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF )
+            // InternalGExpressions.g:917:2: iv_ruleGPrimaryExpression= ruleGPrimaryExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGPrimaryExpressionRule()); 
@@ -2600,11 +2640,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2613,7 +2653,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGPrimaryExpression"
-    // InternalGExpressions.g:913:1: ruleGPrimaryExpression returns [EObject current=null] : (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression ) ;
+    // InternalGExpressions.g:923:1: ruleGPrimaryExpression returns [EObject current=null] : (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression ) ;
     public final EObject ruleGPrimaryExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2630,13 +2670,14 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_GBraceExpression_5 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:916:28: ( (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression ) )
-            // InternalGExpressions.g:917:1: (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression )
+            // InternalGExpressions.g:929:2: ( (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression ) )
+            // InternalGExpressions.g:930:2: (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression )
             {
-            // InternalGExpressions.g:917:1: (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression )
+            // InternalGExpressions.g:930:2: (this_GStringExpression_0= ruleGStringExpression | this_GBooleanExpression_1= ruleGBooleanExpression | this_GNumericExpression_2= ruleGNumericExpression | this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression | this_GIfExpression_4= ruleGIfExpression | this_GBraceExpression_5= ruleGBraceExpression )
             int alt15=6;
             switch ( input.LA(1) ) {
             case RULE_STRING:
@@ -2680,12 +2721,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt15) {
                 case 1 :
-                    // InternalGExpressions.g:918:5: this_GStringExpression_0= ruleGStringExpression
+                    // InternalGExpressions.g:931:3: this_GStringExpression_0= ruleGStringExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGStringExpressionParserRuleCall_0()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGStringExpressionParserRuleCall_0());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GStringExpression_0=ruleGStringExpression();
@@ -2693,21 +2734,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GStringExpression_0; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GStringExpression_0;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:928:5: this_GBooleanExpression_1= ruleGBooleanExpression
+                    // InternalGExpressions.g:940:3: this_GBooleanExpression_1= ruleGBooleanExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGBooleanExpressionParserRuleCall_1()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGBooleanExpressionParserRuleCall_1());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GBooleanExpression_1=ruleGBooleanExpression();
@@ -2715,21 +2756,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GBooleanExpression_1; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GBooleanExpression_1;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 3 :
-                    // InternalGExpressions.g:938:5: this_GNumericExpression_2= ruleGNumericExpression
+                    // InternalGExpressions.g:949:3: this_GNumericExpression_2= ruleGNumericExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGNumericExpressionParserRuleCall_2()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGNumericExpressionParserRuleCall_2());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GNumericExpression_2=ruleGNumericExpression();
@@ -2737,21 +2778,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GNumericExpression_2; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GNumericExpression_2;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 4 :
-                    // InternalGExpressions.g:948:5: this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression
+                    // InternalGExpressions.g:958:3: this_GEnumLiteralExpression_3= ruleGEnumLiteralExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGEnumLiteralExpressionParserRuleCall_3()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGEnumLiteralExpressionParserRuleCall_3());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GEnumLiteralExpression_3=ruleGEnumLiteralExpression();
@@ -2759,21 +2800,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GEnumLiteralExpression_3; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GEnumLiteralExpression_3;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 5 :
-                    // InternalGExpressions.g:958:5: this_GIfExpression_4= ruleGIfExpression
+                    // InternalGExpressions.g:967:3: this_GIfExpression_4= ruleGIfExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGIfExpressionParserRuleCall_4()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGIfExpressionParserRuleCall_4());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GIfExpression_4=ruleGIfExpression();
@@ -2781,21 +2822,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GIfExpression_4; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GIfExpression_4;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 6 :
-                    // InternalGExpressions.g:968:5: this_GBraceExpression_5= ruleGBraceExpression
+                    // InternalGExpressions.g:976:3: this_GBraceExpression_5= ruleGBraceExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGBraceExpressionParserRuleCall_5()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGPrimaryExpressionAccess().getGBraceExpressionParserRuleCall_5());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GBraceExpression_5=ruleGBraceExpression();
@@ -2803,10 +2844,10 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GBraceExpression_5; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GBraceExpression_5;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
@@ -2818,14 +2859,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2834,7 +2877,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGStringExpression"
-    // InternalGExpressions.g:984:1: entryRuleGStringExpression returns [EObject current=null] : iv_ruleGStringExpression= ruleGStringExpression EOF ;
+    // InternalGExpressions.g:988:1: entryRuleGStringExpression returns [EObject current=null] : iv_ruleGStringExpression= ruleGStringExpression EOF ;
     public final EObject entryRuleGStringExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2842,8 +2885,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:985:2: (iv_ruleGStringExpression= ruleGStringExpression EOF )
-            // InternalGExpressions.g:986:2: iv_ruleGStringExpression= ruleGStringExpression EOF
+            // InternalGExpressions.g:988:58: (iv_ruleGStringExpression= ruleGStringExpression EOF )
+            // InternalGExpressions.g:989:2: iv_ruleGStringExpression= ruleGStringExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGStringExpressionRule()); 
@@ -2861,11 +2904,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2874,57 +2917,58 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGStringExpression"
-    // InternalGExpressions.g:993:1: ruleGStringExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // InternalGExpressions.g:995:1: ruleGStringExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleGStringExpression() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:996:28: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // InternalGExpressions.g:997:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalGExpressions.g:1001:2: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // InternalGExpressions.g:1002:2: ( () ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // InternalGExpressions.g:997:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
-            // InternalGExpressions.g:997:2: () ( (lv_value_1_0= RULE_STRING ) )
+            // InternalGExpressions.g:1002:2: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // InternalGExpressions.g:1003:3: () ( (lv_value_1_0= RULE_STRING ) )
             {
-            // InternalGExpressions.g:997:2: ()
-            // InternalGExpressions.g:998:5: 
+            // InternalGExpressions.g:1003:3: ()
+            // InternalGExpressions.g:1004:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGStringExpressionAccess().getGStringExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGStringExpressionAccess().getGStringExpressionAction_0(),
+              					current);
+              			
             }
 
             }
 
-            // InternalGExpressions.g:1003:2: ( (lv_value_1_0= RULE_STRING ) )
-            // InternalGExpressions.g:1004:1: (lv_value_1_0= RULE_STRING )
+            // InternalGExpressions.g:1010:3: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalGExpressions.g:1011:4: (lv_value_1_0= RULE_STRING )
             {
-            // InternalGExpressions.g:1004:1: (lv_value_1_0= RULE_STRING )
-            // InternalGExpressions.g:1005:3: lv_value_1_0= RULE_STRING
+            // InternalGExpressions.g:1011:4: (lv_value_1_0= RULE_STRING )
+            // InternalGExpressions.g:1012:5: lv_value_1_0= RULE_STRING
             {
             lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_value_1_0, grammarAccess.getGStringExpressionAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-              		
+              					newLeafNode(lv_value_1_0, grammarAccess.getGStringExpressionAccess().getValueSTRINGTerminalRuleCall_1_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getGStringExpressionRule());
-              	        }
-                     		setWithLastConsumed(
-                     			current, 
-                     			"value",
-                      		lv_value_1_0, 
-                      		"org.eclipse.xtext.common.Terminals.STRING");
-              	    
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGStringExpressionRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"value",
+              						lv_value_1_0,
+              						"org.eclipse.xtext.common.Terminals.STRING");
+              				
             }
 
             }
@@ -2939,14 +2983,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2955,7 +3001,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGBooleanExpression"
-    // InternalGExpressions.g:1029:1: entryRuleGBooleanExpression returns [EObject current=null] : iv_ruleGBooleanExpression= ruleGBooleanExpression EOF ;
+    // InternalGExpressions.g:1032:1: entryRuleGBooleanExpression returns [EObject current=null] : iv_ruleGBooleanExpression= ruleGBooleanExpression EOF ;
     public final EObject entryRuleGBooleanExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2963,8 +3009,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1030:2: (iv_ruleGBooleanExpression= ruleGBooleanExpression EOF )
-            // InternalGExpressions.g:1031:2: iv_ruleGBooleanExpression= ruleGBooleanExpression EOF
+            // InternalGExpressions.g:1032:59: (iv_ruleGBooleanExpression= ruleGBooleanExpression EOF )
+            // InternalGExpressions.g:1033:2: iv_ruleGBooleanExpression= ruleGBooleanExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGBooleanExpressionRule()); 
@@ -2982,11 +3028,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -2995,57 +3041,58 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGBooleanExpression"
-    // InternalGExpressions.g:1038:1: ruleGBooleanExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) ) ;
+    // InternalGExpressions.g:1039:1: ruleGBooleanExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) ) ;
     public final EObject ruleGBooleanExpression() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1041:28: ( ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) ) )
-            // InternalGExpressions.g:1042:1: ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) )
+            // InternalGExpressions.g:1045:2: ( ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) ) )
+            // InternalGExpressions.g:1046:2: ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) )
             {
-            // InternalGExpressions.g:1042:1: ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) )
-            // InternalGExpressions.g:1042:2: () ( (lv_value_1_0= RULE_BOOLEAN ) )
+            // InternalGExpressions.g:1046:2: ( () ( (lv_value_1_0= RULE_BOOLEAN ) ) )
+            // InternalGExpressions.g:1047:3: () ( (lv_value_1_0= RULE_BOOLEAN ) )
             {
-            // InternalGExpressions.g:1042:2: ()
-            // InternalGExpressions.g:1043:5: 
+            // InternalGExpressions.g:1047:3: ()
+            // InternalGExpressions.g:1048:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGBooleanExpressionAccess().getGBooleanExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGBooleanExpressionAccess().getGBooleanExpressionAction_0(),
+              					current);
+              			
             }
 
             }
 
-            // InternalGExpressions.g:1048:2: ( (lv_value_1_0= RULE_BOOLEAN ) )
-            // InternalGExpressions.g:1049:1: (lv_value_1_0= RULE_BOOLEAN )
+            // InternalGExpressions.g:1054:3: ( (lv_value_1_0= RULE_BOOLEAN ) )
+            // InternalGExpressions.g:1055:4: (lv_value_1_0= RULE_BOOLEAN )
             {
-            // InternalGExpressions.g:1049:1: (lv_value_1_0= RULE_BOOLEAN )
-            // InternalGExpressions.g:1050:3: lv_value_1_0= RULE_BOOLEAN
+            // InternalGExpressions.g:1055:4: (lv_value_1_0= RULE_BOOLEAN )
+            // InternalGExpressions.g:1056:5: lv_value_1_0= RULE_BOOLEAN
             {
             lv_value_1_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_value_1_0, grammarAccess.getGBooleanExpressionAccess().getValueBOOLEANTerminalRuleCall_1_0()); 
-              		
+              					newLeafNode(lv_value_1_0, grammarAccess.getGBooleanExpressionAccess().getValueBOOLEANTerminalRuleCall_1_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getGBooleanExpressionRule());
-              	        }
-                     		setWithLastConsumed(
-                     			current, 
-                     			"value",
-                      		lv_value_1_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.BOOLEAN");
-              	    
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGBooleanExpressionRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"value",
+              						lv_value_1_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.BOOLEAN");
+              				
             }
 
             }
@@ -3060,14 +3107,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3076,7 +3125,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGNumericExpression"
-    // InternalGExpressions.g:1074:1: entryRuleGNumericExpression returns [EObject current=null] : iv_ruleGNumericExpression= ruleGNumericExpression EOF ;
+    // InternalGExpressions.g:1076:1: entryRuleGNumericExpression returns [EObject current=null] : iv_ruleGNumericExpression= ruleGNumericExpression EOF ;
     public final EObject entryRuleGNumericExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3084,8 +3133,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1075:2: (iv_ruleGNumericExpression= ruleGNumericExpression EOF )
-            // InternalGExpressions.g:1076:2: iv_ruleGNumericExpression= ruleGNumericExpression EOF
+            // InternalGExpressions.g:1076:59: (iv_ruleGNumericExpression= ruleGNumericExpression EOF )
+            // InternalGExpressions.g:1077:2: iv_ruleGNumericExpression= ruleGNumericExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGNumericExpressionRule()); 
@@ -3103,11 +3152,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3125,13 +3174,14 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject this_GDoubleExpression_1 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1086:28: ( (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression ) )
-            // InternalGExpressions.g:1087:1: (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression )
+            // InternalGExpressions.g:1089:2: ( (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression ) )
+            // InternalGExpressions.g:1090:2: (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression )
             {
-            // InternalGExpressions.g:1087:1: (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression )
+            // InternalGExpressions.g:1090:2: (this_GIntegerExpression_0= ruleGIntegerExpression | this_GDoubleExpression_1= ruleGDoubleExpression )
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -3150,12 +3200,12 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt16) {
                 case 1 :
-                    // InternalGExpressions.g:1088:5: this_GIntegerExpression_0= ruleGIntegerExpression
+                    // InternalGExpressions.g:1091:3: this_GIntegerExpression_0= ruleGIntegerExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGNumericExpressionAccess().getGIntegerExpressionParserRuleCall_0()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGNumericExpressionAccess().getGIntegerExpressionParserRuleCall_0());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GIntegerExpression_0=ruleGIntegerExpression();
@@ -3163,21 +3213,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GIntegerExpression_0; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GIntegerExpression_0;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1098:5: this_GDoubleExpression_1= ruleGDoubleExpression
+                    // InternalGExpressions.g:1100:3: this_GDoubleExpression_1= ruleGDoubleExpression
                     {
                     if ( state.backtracking==0 ) {
-                       
-                              newCompositeNode(grammarAccess.getGNumericExpressionAccess().getGDoubleExpressionParserRuleCall_1()); 
-                          
+
+                      			newCompositeNode(grammarAccess.getGNumericExpressionAccess().getGDoubleExpressionParserRuleCall_1());
+                      		
                     }
                     pushFollow(FOLLOW_2);
                     this_GDoubleExpression_1=ruleGDoubleExpression();
@@ -3185,10 +3235,10 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
-                       
-                              current = this_GDoubleExpression_1; 
-                              afterParserOrEnumRuleCall();
-                          
+
+                      			current = this_GDoubleExpression_1;
+                      			afterParserOrEnumRuleCall();
+                      		
                     }
 
                     }
@@ -3200,14 +3250,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3216,7 +3268,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGIntegerExpression"
-    // InternalGExpressions.g:1114:1: entryRuleGIntegerExpression returns [EObject current=null] : iv_ruleGIntegerExpression= ruleGIntegerExpression EOF ;
+    // InternalGExpressions.g:1112:1: entryRuleGIntegerExpression returns [EObject current=null] : iv_ruleGIntegerExpression= ruleGIntegerExpression EOF ;
     public final EObject entryRuleGIntegerExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3224,8 +3276,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1115:2: (iv_ruleGIntegerExpression= ruleGIntegerExpression EOF )
-            // InternalGExpressions.g:1116:2: iv_ruleGIntegerExpression= ruleGIntegerExpression EOF
+            // InternalGExpressions.g:1112:59: (iv_ruleGIntegerExpression= ruleGIntegerExpression EOF )
+            // InternalGExpressions.g:1113:2: iv_ruleGIntegerExpression= ruleGIntegerExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGIntegerExpressionRule()); 
@@ -3243,11 +3295,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3256,57 +3308,58 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGIntegerExpression"
-    // InternalGExpressions.g:1123:1: ruleGIntegerExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_INT ) ) ) ;
+    // InternalGExpressions.g:1119:1: ruleGIntegerExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_INT ) ) ) ;
     public final EObject ruleGIntegerExpression() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1126:28: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) )
-            // InternalGExpressions.g:1127:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            // InternalGExpressions.g:1125:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) )
+            // InternalGExpressions.g:1126:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
             {
-            // InternalGExpressions.g:1127:1: ( () ( (lv_value_1_0= RULE_INT ) ) )
-            // InternalGExpressions.g:1127:2: () ( (lv_value_1_0= RULE_INT ) )
+            // InternalGExpressions.g:1126:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            // InternalGExpressions.g:1127:3: () ( (lv_value_1_0= RULE_INT ) )
             {
-            // InternalGExpressions.g:1127:2: ()
-            // InternalGExpressions.g:1128:5: 
+            // InternalGExpressions.g:1127:3: ()
+            // InternalGExpressions.g:1128:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGIntegerExpressionAccess().getGIntegerExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGIntegerExpressionAccess().getGIntegerExpressionAction_0(),
+              					current);
+              			
             }
 
             }
 
-            // InternalGExpressions.g:1133:2: ( (lv_value_1_0= RULE_INT ) )
-            // InternalGExpressions.g:1134:1: (lv_value_1_0= RULE_INT )
+            // InternalGExpressions.g:1134:3: ( (lv_value_1_0= RULE_INT ) )
+            // InternalGExpressions.g:1135:4: (lv_value_1_0= RULE_INT )
             {
-            // InternalGExpressions.g:1134:1: (lv_value_1_0= RULE_INT )
-            // InternalGExpressions.g:1135:3: lv_value_1_0= RULE_INT
+            // InternalGExpressions.g:1135:4: (lv_value_1_0= RULE_INT )
+            // InternalGExpressions.g:1136:5: lv_value_1_0= RULE_INT
             {
             lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_value_1_0, grammarAccess.getGIntegerExpressionAccess().getValueINTTerminalRuleCall_1_0()); 
-              		
+              					newLeafNode(lv_value_1_0, grammarAccess.getGIntegerExpressionAccess().getValueINTTerminalRuleCall_1_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getGIntegerExpressionRule());
-              	        }
-                     		setWithLastConsumed(
-                     			current, 
-                     			"value",
-                      		lv_value_1_0, 
-                      		"org.eclipse.xtext.common.Terminals.INT");
-              	    
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGIntegerExpressionRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"value",
+              						lv_value_1_0,
+              						"org.eclipse.xtext.common.Terminals.INT");
+              				
             }
 
             }
@@ -3321,14 +3374,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3337,7 +3392,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGDoubleExpression"
-    // InternalGExpressions.g:1159:1: entryRuleGDoubleExpression returns [EObject current=null] : iv_ruleGDoubleExpression= ruleGDoubleExpression EOF ;
+    // InternalGExpressions.g:1156:1: entryRuleGDoubleExpression returns [EObject current=null] : iv_ruleGDoubleExpression= ruleGDoubleExpression EOF ;
     public final EObject entryRuleGDoubleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3345,8 +3400,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1160:2: (iv_ruleGDoubleExpression= ruleGDoubleExpression EOF )
-            // InternalGExpressions.g:1161:2: iv_ruleGDoubleExpression= ruleGDoubleExpression EOF
+            // InternalGExpressions.g:1156:58: (iv_ruleGDoubleExpression= ruleGDoubleExpression EOF )
+            // InternalGExpressions.g:1157:2: iv_ruleGDoubleExpression= ruleGDoubleExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGDoubleExpressionRule()); 
@@ -3364,11 +3419,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3377,57 +3432,58 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGDoubleExpression"
-    // InternalGExpressions.g:1168:1: ruleGDoubleExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_DOUBLE ) ) ) ;
+    // InternalGExpressions.g:1163:1: ruleGDoubleExpression returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_DOUBLE ) ) ) ;
     public final EObject ruleGDoubleExpression() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1171:28: ( ( () ( (lv_value_1_0= RULE_DOUBLE ) ) ) )
-            // InternalGExpressions.g:1172:1: ( () ( (lv_value_1_0= RULE_DOUBLE ) ) )
+            // InternalGExpressions.g:1169:2: ( ( () ( (lv_value_1_0= RULE_DOUBLE ) ) ) )
+            // InternalGExpressions.g:1170:2: ( () ( (lv_value_1_0= RULE_DOUBLE ) ) )
             {
-            // InternalGExpressions.g:1172:1: ( () ( (lv_value_1_0= RULE_DOUBLE ) ) )
-            // InternalGExpressions.g:1172:2: () ( (lv_value_1_0= RULE_DOUBLE ) )
+            // InternalGExpressions.g:1170:2: ( () ( (lv_value_1_0= RULE_DOUBLE ) ) )
+            // InternalGExpressions.g:1171:3: () ( (lv_value_1_0= RULE_DOUBLE ) )
             {
-            // InternalGExpressions.g:1172:2: ()
-            // InternalGExpressions.g:1173:5: 
+            // InternalGExpressions.g:1171:3: ()
+            // InternalGExpressions.g:1172:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGDoubleExpressionAccess().getGDoubleExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGDoubleExpressionAccess().getGDoubleExpressionAction_0(),
+              					current);
+              			
             }
 
             }
 
-            // InternalGExpressions.g:1178:2: ( (lv_value_1_0= RULE_DOUBLE ) )
-            // InternalGExpressions.g:1179:1: (lv_value_1_0= RULE_DOUBLE )
+            // InternalGExpressions.g:1178:3: ( (lv_value_1_0= RULE_DOUBLE ) )
+            // InternalGExpressions.g:1179:4: (lv_value_1_0= RULE_DOUBLE )
             {
-            // InternalGExpressions.g:1179:1: (lv_value_1_0= RULE_DOUBLE )
-            // InternalGExpressions.g:1180:3: lv_value_1_0= RULE_DOUBLE
+            // InternalGExpressions.g:1179:4: (lv_value_1_0= RULE_DOUBLE )
+            // InternalGExpressions.g:1180:5: lv_value_1_0= RULE_DOUBLE
             {
             lv_value_1_0=(Token)match(input,RULE_DOUBLE,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(lv_value_1_0, grammarAccess.getGDoubleExpressionAccess().getValueDOUBLETerminalRuleCall_1_0()); 
-              		
+              					newLeafNode(lv_value_1_0, grammarAccess.getGDoubleExpressionAccess().getValueDOUBLETerminalRuleCall_1_0());
+              				
             }
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElement(grammarAccess.getGDoubleExpressionRule());
-              	        }
-                     		setWithLastConsumed(
-                     			current, 
-                     			"value",
-                      		lv_value_1_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.DOUBLE");
-              	    
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGDoubleExpressionRule());
+              					}
+              					setWithLastConsumed(
+              						current,
+              						"value",
+              						lv_value_1_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.DOUBLE");
+              				
             }
 
             }
@@ -3442,14 +3498,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3458,7 +3516,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGEnumLiteralExpression"
-    // InternalGExpressions.g:1204:1: entryRuleGEnumLiteralExpression returns [EObject current=null] : iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF ;
+    // InternalGExpressions.g:1200:1: entryRuleGEnumLiteralExpression returns [EObject current=null] : iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF ;
     public final EObject entryRuleGEnumLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3466,8 +3524,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1205:2: (iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF )
-            // InternalGExpressions.g:1206:2: iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF
+            // InternalGExpressions.g:1200:63: (iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF )
+            // InternalGExpressions.g:1201:2: iv_ruleGEnumLiteralExpression= ruleGEnumLiteralExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGEnumLiteralExpressionRule()); 
@@ -3485,11 +3543,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3498,30 +3556,31 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGEnumLiteralExpression"
-    // InternalGExpressions.g:1213:1: ruleGEnumLiteralExpression returns [EObject current=null] : ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) ) ;
+    // InternalGExpressions.g:1207:1: ruleGEnumLiteralExpression returns [EObject current=null] : ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) ) ;
     public final EObject ruleGEnumLiteralExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1216:28: ( ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) ) )
-            // InternalGExpressions.g:1217:1: ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) )
+            // InternalGExpressions.g:1213:2: ( ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) ) )
+            // InternalGExpressions.g:1214:2: ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) )
             {
-            // InternalGExpressions.g:1217:1: ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) )
-            // InternalGExpressions.g:1217:2: () otherlv_1= '#' ( ( ruleQualifiedName ) )
+            // InternalGExpressions.g:1214:2: ( () otherlv_1= '#' ( ( ruleQualifiedName ) ) )
+            // InternalGExpressions.g:1215:3: () otherlv_1= '#' ( ( ruleQualifiedName ) )
             {
-            // InternalGExpressions.g:1217:2: ()
-            // InternalGExpressions.g:1218:5: 
+            // InternalGExpressions.g:1215:3: ()
+            // InternalGExpressions.g:1216:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGEnumLiteralExpressionAccess().getGEnumLiteralExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGEnumLiteralExpressionAccess().getGEnumLiteralExpressionAction_0(),
+              					current);
+              			
             }
 
             }
@@ -3529,26 +3588,26 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_1=(Token)match(input,15,FOLLOW_16); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getGEnumLiteralExpressionAccess().getNumberSignKeyword_1());
-                  
+              			newLeafNode(otherlv_1, grammarAccess.getGEnumLiteralExpressionAccess().getNumberSignKeyword_1());
+              		
             }
-            // InternalGExpressions.g:1227:1: ( ( ruleQualifiedName ) )
-            // InternalGExpressions.g:1228:1: ( ruleQualifiedName )
+            // InternalGExpressions.g:1226:3: ( ( ruleQualifiedName ) )
+            // InternalGExpressions.g:1227:4: ( ruleQualifiedName )
             {
-            // InternalGExpressions.g:1228:1: ( ruleQualifiedName )
-            // InternalGExpressions.g:1229:3: ruleQualifiedName
+            // InternalGExpressions.g:1227:4: ( ruleQualifiedName )
+            // InternalGExpressions.g:1228:5: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
 
-              			if (current==null) {
-              	            current = createModelElement(grammarAccess.getGEnumLiteralExpressionRule());
-              	        }
-                      
+              					if (current==null) {
+              						current = createModelElement(grammarAccess.getGEnumLiteralExpressionRule());
+              					}
+              				
             }
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getGEnumLiteralExpressionAccess().getValueEEnumLiteralCrossReference_2_0()); 
-              	    
+
+              					newCompositeNode(grammarAccess.getGEnumLiteralExpressionAccess().getValueEEnumLiteralCrossReference_2_0());
+              				
             }
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
@@ -3556,9 +3615,9 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               
-              	        afterParserOrEnumRuleCall();
-              	    
+
+              					afterParserOrEnumRuleCall();
+              				
             }
 
             }
@@ -3573,14 +3632,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3589,7 +3650,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGIfExpression"
-    // InternalGExpressions.g:1250:1: entryRuleGIfExpression returns [EObject current=null] : iv_ruleGIfExpression= ruleGIfExpression EOF ;
+    // InternalGExpressions.g:1246:1: entryRuleGIfExpression returns [EObject current=null] : iv_ruleGIfExpression= ruleGIfExpression EOF ;
     public final EObject entryRuleGIfExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3597,8 +3658,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1251:2: (iv_ruleGIfExpression= ruleGIfExpression EOF )
-            // InternalGExpressions.g:1252:2: iv_ruleGIfExpression= ruleGIfExpression EOF
+            // InternalGExpressions.g:1246:54: (iv_ruleGIfExpression= ruleGIfExpression EOF )
+            // InternalGExpressions.g:1247:2: iv_ruleGIfExpression= ruleGIfExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGIfExpressionRule()); 
@@ -3616,11 +3677,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3629,7 +3690,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGIfExpression"
-    // InternalGExpressions.g:1259:1: ruleGIfExpression returns [EObject current=null] : ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' ) ;
+    // InternalGExpressions.g:1253:1: ruleGIfExpression returns [EObject current=null] : ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' ) ;
     public final EObject ruleGIfExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3644,24 +3705,25 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_elseExpression_6_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1262:28: ( ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' ) )
-            // InternalGExpressions.g:1263:1: ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' )
+            // InternalGExpressions.g:1259:2: ( ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' ) )
+            // InternalGExpressions.g:1260:2: ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' )
             {
-            // InternalGExpressions.g:1263:1: ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' )
-            // InternalGExpressions.g:1263:2: () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif'
+            // InternalGExpressions.g:1260:2: ( () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif' )
+            // InternalGExpressions.g:1261:3: () otherlv_1= 'if' ( (lv_condition_2_0= ruleGExpression ) ) otherlv_3= 'then' ( (lv_thenExpression_4_0= ruleGExpression ) ) otherlv_5= 'else' ( (lv_elseExpression_6_0= ruleGExpression ) ) otherlv_7= 'endif'
             {
-            // InternalGExpressions.g:1263:2: ()
-            // InternalGExpressions.g:1264:5: 
+            // InternalGExpressions.g:1261:3: ()
+            // InternalGExpressions.g:1262:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGIfExpressionAccess().getGIfExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGIfExpressionAccess().getGIfExpressionAction_0(),
+              					current);
+              			
             }
 
             }
@@ -3669,19 +3731,19 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_1=(Token)match(input,16,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getGIfExpressionAccess().getIfKeyword_1());
-                  
+              			newLeafNode(otherlv_1, grammarAccess.getGIfExpressionAccess().getIfKeyword_1());
+              		
             }
-            // InternalGExpressions.g:1273:1: ( (lv_condition_2_0= ruleGExpression ) )
-            // InternalGExpressions.g:1274:1: (lv_condition_2_0= ruleGExpression )
+            // InternalGExpressions.g:1272:3: ( (lv_condition_2_0= ruleGExpression ) )
+            // InternalGExpressions.g:1273:4: (lv_condition_2_0= ruleGExpression )
             {
-            // InternalGExpressions.g:1274:1: (lv_condition_2_0= ruleGExpression )
-            // InternalGExpressions.g:1275:3: lv_condition_2_0= ruleGExpression
+            // InternalGExpressions.g:1273:4: (lv_condition_2_0= ruleGExpression )
+            // InternalGExpressions.g:1274:5: lv_condition_2_0= ruleGExpression
             {
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getGIfExpressionAccess().getConditionGExpressionParserRuleCall_2_0()); 
-              	    
+
+              					newCompositeNode(grammarAccess.getGIfExpressionAccess().getConditionGExpressionParserRuleCall_2_0());
+              				
             }
             pushFollow(FOLLOW_17);
             lv_condition_2_0=ruleGExpression();
@@ -3690,16 +3752,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"condition",
-                      		lv_condition_2_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-              	        afterParserOrEnumRuleCall();
-              	    
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
+              					}
+              					set(
+              						current,
+              						"condition",
+              						lv_condition_2_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+              					afterParserOrEnumRuleCall();
+              				
             }
 
             }
@@ -3710,19 +3772,19 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_3=(Token)match(input,17,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_3, grammarAccess.getGIfExpressionAccess().getThenKeyword_3());
-                  
+              			newLeafNode(otherlv_3, grammarAccess.getGIfExpressionAccess().getThenKeyword_3());
+              		
             }
-            // InternalGExpressions.g:1295:1: ( (lv_thenExpression_4_0= ruleGExpression ) )
-            // InternalGExpressions.g:1296:1: (lv_thenExpression_4_0= ruleGExpression )
+            // InternalGExpressions.g:1295:3: ( (lv_thenExpression_4_0= ruleGExpression ) )
+            // InternalGExpressions.g:1296:4: (lv_thenExpression_4_0= ruleGExpression )
             {
-            // InternalGExpressions.g:1296:1: (lv_thenExpression_4_0= ruleGExpression )
-            // InternalGExpressions.g:1297:3: lv_thenExpression_4_0= ruleGExpression
+            // InternalGExpressions.g:1296:4: (lv_thenExpression_4_0= ruleGExpression )
+            // InternalGExpressions.g:1297:5: lv_thenExpression_4_0= ruleGExpression
             {
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getGIfExpressionAccess().getThenExpressionGExpressionParserRuleCall_4_0()); 
-              	    
+
+              					newCompositeNode(grammarAccess.getGIfExpressionAccess().getThenExpressionGExpressionParserRuleCall_4_0());
+              				
             }
             pushFollow(FOLLOW_18);
             lv_thenExpression_4_0=ruleGExpression();
@@ -3731,16 +3793,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"thenExpression",
-                      		lv_thenExpression_4_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-              	        afterParserOrEnumRuleCall();
-              	    
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
+              					}
+              					set(
+              						current,
+              						"thenExpression",
+              						lv_thenExpression_4_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+              					afterParserOrEnumRuleCall();
+              				
             }
 
             }
@@ -3751,19 +3813,19 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_5=(Token)match(input,18,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_5, grammarAccess.getGIfExpressionAccess().getElseKeyword_5());
-                  
+              			newLeafNode(otherlv_5, grammarAccess.getGIfExpressionAccess().getElseKeyword_5());
+              		
             }
-            // InternalGExpressions.g:1317:1: ( (lv_elseExpression_6_0= ruleGExpression ) )
-            // InternalGExpressions.g:1318:1: (lv_elseExpression_6_0= ruleGExpression )
+            // InternalGExpressions.g:1318:3: ( (lv_elseExpression_6_0= ruleGExpression ) )
+            // InternalGExpressions.g:1319:4: (lv_elseExpression_6_0= ruleGExpression )
             {
-            // InternalGExpressions.g:1318:1: (lv_elseExpression_6_0= ruleGExpression )
-            // InternalGExpressions.g:1319:3: lv_elseExpression_6_0= ruleGExpression
+            // InternalGExpressions.g:1319:4: (lv_elseExpression_6_0= ruleGExpression )
+            // InternalGExpressions.g:1320:5: lv_elseExpression_6_0= ruleGExpression
             {
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getGIfExpressionAccess().getElseExpressionGExpressionParserRuleCall_6_0()); 
-              	    
+
+              					newCompositeNode(grammarAccess.getGIfExpressionAccess().getElseExpressionGExpressionParserRuleCall_6_0());
+              				
             }
             pushFollow(FOLLOW_19);
             lv_elseExpression_6_0=ruleGExpression();
@@ -3772,16 +3834,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"elseExpression",
-                      		lv_elseExpression_6_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-              	        afterParserOrEnumRuleCall();
-              	    
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getGIfExpressionRule());
+              					}
+              					set(
+              						current,
+              						"elseExpression",
+              						lv_elseExpression_6_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+              					afterParserOrEnumRuleCall();
+              				
             }
 
             }
@@ -3792,8 +3854,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_7=(Token)match(input,19,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_7, grammarAccess.getGIfExpressionAccess().getEndifKeyword_7());
-                  
+              			newLeafNode(otherlv_7, grammarAccess.getGIfExpressionAccess().getEndifKeyword_7());
+              		
             }
 
             }
@@ -3802,14 +3864,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3818,7 +3882,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGBraceExpression"
-    // InternalGExpressions.g:1347:1: entryRuleGBraceExpression returns [EObject current=null] : iv_ruleGBraceExpression= ruleGBraceExpression EOF ;
+    // InternalGExpressions.g:1345:1: entryRuleGBraceExpression returns [EObject current=null] : iv_ruleGBraceExpression= ruleGBraceExpression EOF ;
     public final EObject entryRuleGBraceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3826,8 +3890,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1348:2: (iv_ruleGBraceExpression= ruleGBraceExpression EOF )
-            // InternalGExpressions.g:1349:2: iv_ruleGBraceExpression= ruleGBraceExpression EOF
+            // InternalGExpressions.g:1345:57: (iv_ruleGBraceExpression= ruleGBraceExpression EOF )
+            // InternalGExpressions.g:1346:2: iv_ruleGBraceExpression= ruleGBraceExpression EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getGBraceExpressionRule()); 
@@ -3845,11 +3909,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3858,7 +3922,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGBraceExpression"
-    // InternalGExpressions.g:1356:1: ruleGBraceExpression returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' ) ;
+    // InternalGExpressions.g:1352:1: ruleGBraceExpression returns [EObject current=null] : ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' ) ;
     public final EObject ruleGBraceExpression() throws RecognitionException {
         EObject current = null;
 
@@ -3867,24 +3931,25 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         EObject lv_innerExpression_2_0 = null;
 
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1359:28: ( ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' ) )
-            // InternalGExpressions.g:1360:1: ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' )
+            // InternalGExpressions.g:1358:2: ( ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' ) )
+            // InternalGExpressions.g:1359:2: ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' )
             {
-            // InternalGExpressions.g:1360:1: ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' )
-            // InternalGExpressions.g:1360:2: () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')'
+            // InternalGExpressions.g:1359:2: ( () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')' )
+            // InternalGExpressions.g:1360:3: () otherlv_1= '(' ( (lv_innerExpression_2_0= ruleGExpression ) ) otherlv_3= ')'
             {
-            // InternalGExpressions.g:1360:2: ()
-            // InternalGExpressions.g:1361:5: 
+            // InternalGExpressions.g:1360:3: ()
+            // InternalGExpressions.g:1361:4: 
             {
             if ( state.backtracking==0 ) {
 
-                      current = forceCreateModelElement(
-                          grammarAccess.getGBraceExpressionAccess().getGBraceExpressionAction_0(),
-                          current);
-                  
+              				current = forceCreateModelElement(
+              					grammarAccess.getGBraceExpressionAccess().getGBraceExpressionAction_0(),
+              					current);
+              			
             }
 
             }
@@ -3892,19 +3957,19 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_1=(Token)match(input,20,FOLLOW_5); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_1, grammarAccess.getGBraceExpressionAccess().getLeftParenthesisKeyword_1());
-                  
+              			newLeafNode(otherlv_1, grammarAccess.getGBraceExpressionAccess().getLeftParenthesisKeyword_1());
+              		
             }
-            // InternalGExpressions.g:1370:1: ( (lv_innerExpression_2_0= ruleGExpression ) )
-            // InternalGExpressions.g:1371:1: (lv_innerExpression_2_0= ruleGExpression )
+            // InternalGExpressions.g:1371:3: ( (lv_innerExpression_2_0= ruleGExpression ) )
+            // InternalGExpressions.g:1372:4: (lv_innerExpression_2_0= ruleGExpression )
             {
-            // InternalGExpressions.g:1371:1: (lv_innerExpression_2_0= ruleGExpression )
-            // InternalGExpressions.g:1372:3: lv_innerExpression_2_0= ruleGExpression
+            // InternalGExpressions.g:1372:4: (lv_innerExpression_2_0= ruleGExpression )
+            // InternalGExpressions.g:1373:5: lv_innerExpression_2_0= ruleGExpression
             {
             if ( state.backtracking==0 ) {
-               
-              	        newCompositeNode(grammarAccess.getGBraceExpressionAccess().getInnerExpressionGExpressionParserRuleCall_2_0()); 
-              	    
+
+              					newCompositeNode(grammarAccess.getGBraceExpressionAccess().getInnerExpressionGExpressionParserRuleCall_2_0());
+              				
             }
             pushFollow(FOLLOW_20);
             lv_innerExpression_2_0=ruleGExpression();
@@ -3913,16 +3978,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              	        if (current==null) {
-              	            current = createModelElementForParent(grammarAccess.getGBraceExpressionRule());
-              	        }
-                     		set(
-                     			current, 
-                     			"innerExpression",
-                      		lv_innerExpression_2_0, 
-                      		"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
-              	        afterParserOrEnumRuleCall();
-              	    
+              					if (current==null) {
+              						current = createModelElementForParent(grammarAccess.getGBraceExpressionRule());
+              					}
+              					set(
+              						current,
+              						"innerExpression",
+              						lv_innerExpression_2_0,
+              						"org.eclipse.gemoc.gexpressions.xtext.GExpressions.GExpression");
+              					afterParserOrEnumRuleCall();
+              				
             }
 
             }
@@ -3933,8 +3998,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             otherlv_3=(Token)match(input,21,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                  	newLeafNode(otherlv_3, grammarAccess.getGBraceExpressionAccess().getRightParenthesisKeyword_3());
-                  
+              			newLeafNode(otherlv_3, grammarAccess.getGBraceExpressionAccess().getRightParenthesisKeyword_3());
+              		
             }
 
             }
@@ -3943,14 +4008,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3959,7 +4026,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNavigationOperator"
-    // InternalGExpressions.g:1400:1: entryRuleNavigationOperator returns [String current=null] : iv_ruleNavigationOperator= ruleNavigationOperator EOF ;
+    // InternalGExpressions.g:1398:1: entryRuleNavigationOperator returns [String current=null] : iv_ruleNavigationOperator= ruleNavigationOperator EOF ;
     public final String entryRuleNavigationOperator() throws RecognitionException {
         String current = null;
 
@@ -3967,8 +4034,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1401:2: (iv_ruleNavigationOperator= ruleNavigationOperator EOF )
-            // InternalGExpressions.g:1402:2: iv_ruleNavigationOperator= ruleNavigationOperator EOF
+            // InternalGExpressions.g:1398:58: (iv_ruleNavigationOperator= ruleNavigationOperator EOF )
+            // InternalGExpressions.g:1399:2: iv_ruleNavigationOperator= ruleNavigationOperator EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getNavigationOperatorRule()); 
@@ -3986,11 +4053,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -3999,19 +4066,20 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNavigationOperator"
-    // InternalGExpressions.g:1409:1: ruleNavigationOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '.' | kw= '->' ) ;
+    // InternalGExpressions.g:1405:1: ruleNavigationOperator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '.' | kw= '->' ) ;
     public final AntlrDatatypeRuleToken ruleNavigationOperator() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
         Token kw=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1412:28: ( (kw= '.' | kw= '->' ) )
-            // InternalGExpressions.g:1413:1: (kw= '.' | kw= '->' )
+            // InternalGExpressions.g:1411:2: ( (kw= '.' | kw= '->' ) )
+            // InternalGExpressions.g:1412:2: (kw= '.' | kw= '->' )
             {
-            // InternalGExpressions.g:1413:1: (kw= '.' | kw= '->' )
+            // InternalGExpressions.g:1412:2: (kw= '.' | kw= '->' )
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -4030,27 +4098,27 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt17) {
                 case 1 :
-                    // InternalGExpressions.g:1414:2: kw= '.'
+                    // InternalGExpressions.g:1413:3: kw= '.'
                     {
                     kw=(Token)match(input,22,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current.merge(kw);
-                              newLeafNode(kw, grammarAccess.getNavigationOperatorAccess().getFullStopKeyword_0()); 
-                          
+                      			current.merge(kw);
+                      			newLeafNode(kw, grammarAccess.getNavigationOperatorAccess().getFullStopKeyword_0());
+                      		
                     }
 
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1421:2: kw= '->'
+                    // InternalGExpressions.g:1419:3: kw= '->'
                     {
                     kw=(Token)match(input,23,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current.merge(kw);
-                              newLeafNode(kw, grammarAccess.getNavigationOperatorAccess().getHyphenMinusGreaterThanSignKeyword_1()); 
-                          
+                      			current.merge(kw);
+                      			newLeafNode(kw, grammarAccess.getNavigationOperatorAccess().getHyphenMinusGreaterThanSignKeyword_1());
+                      		
                     }
 
                     }
@@ -4062,14 +4130,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4078,7 +4148,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalGExpressions.g:1434:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalGExpressions.g:1428:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -4086,8 +4156,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalGExpressions.g:1435:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalGExpressions.g:1436:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalGExpressions.g:1428:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalGExpressions.g:1429:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
             if ( state.backtracking==0 ) {
                newCompositeNode(grammarAccess.getQualifiedNameRule()); 
@@ -4105,11 +4175,11 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4118,7 +4188,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalGExpressions.g:1443:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
+    // InternalGExpressions.g:1435:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4126,27 +4196,28 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         Token kw=null;
         Token this_ID_2=null;
 
-         enterRule(); 
-            
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1446:28: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
-            // InternalGExpressions.g:1447:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // InternalGExpressions.g:1441:2: ( (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* ) )
+            // InternalGExpressions.g:1442:2: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
             {
-            // InternalGExpressions.g:1447:1: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
-            // InternalGExpressions.g:1447:6: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            // InternalGExpressions.g:1442:2: (this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )* )
+            // InternalGExpressions.g:1443:3: this_ID_0= RULE_ID ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
             {
             this_ID_0=(Token)match(input,RULE_ID,FOLLOW_21); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              		current.merge(this_ID_0);
-                  
+              			current.merge(this_ID_0);
+              		
             }
             if ( state.backtracking==0 ) {
-               
-                  newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-                  
+
+              			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
+              		
             }
-            // InternalGExpressions.g:1454:1: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
+            // InternalGExpressions.g:1450:3: ( ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID )*
             loop18:
             do {
                 int alt18=2;
@@ -4171,17 +4242,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalGExpressions.g:1454:2: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
+            	    // InternalGExpressions.g:1451:4: ( ( '.' )=>kw= '.' ) this_ID_2= RULE_ID
             	    {
-            	    // InternalGExpressions.g:1454:2: ( ( '.' )=>kw= '.' )
-            	    // InternalGExpressions.g:1454:3: ( '.' )=>kw= '.'
+            	    // InternalGExpressions.g:1451:4: ( ( '.' )=>kw= '.' )
+            	    // InternalGExpressions.g:1452:5: ( '.' )=>kw= '.'
             	    {
             	    kw=(Token)match(input,22,FOLLOW_16); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	              current.merge(kw);
-            	              newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            	          
+            	      					current.merge(kw);
+            	      					newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
+            	      				
             	    }
 
             	    }
@@ -4189,13 +4260,13 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_21); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      		current.merge(this_ID_2);
-            	          
+            	      				current.merge(this_ID_2);
+            	      			
             	    }
             	    if ( state.backtracking==0 ) {
-            	       
-            	          newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            	          
+
+            	      				newLeafNode(this_ID_2, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1());
+            	      			
             	    }
 
             	    }
@@ -4213,14 +4284,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4229,26 +4302,28 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGAndOperator"
-    // InternalGExpressions.g:1477:1: ruleGAndOperator returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
+    // InternalGExpressions.g:1471:1: ruleGAndOperator returns [Enumerator current=null] : (enumLiteral_0= 'and' ) ;
     public final Enumerator ruleGAndOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1479:28: ( (enumLiteral_0= 'and' ) )
-            // InternalGExpressions.g:1480:1: (enumLiteral_0= 'and' )
+            // InternalGExpressions.g:1477:2: ( (enumLiteral_0= 'and' ) )
+            // InternalGExpressions.g:1478:2: (enumLiteral_0= 'and' )
             {
-            // InternalGExpressions.g:1480:1: (enumLiteral_0= 'and' )
-            // InternalGExpressions.g:1480:3: enumLiteral_0= 'and'
+            // InternalGExpressions.g:1478:2: (enumLiteral_0= 'and' )
+            // InternalGExpressions.g:1479:3: enumLiteral_0= 'and'
             {
             enumLiteral_0=(Token)match(input,24,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                      current = grammarAccess.getGAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
-                      newLeafNode(enumLiteral_0, grammarAccess.getGAndOperatorAccess().getANDEnumLiteralDeclaration()); 
-                  
+              			current = grammarAccess.getGAndOperatorAccess().getANDEnumLiteralDeclaration().getEnumLiteral().getInstance();
+              			newLeafNode(enumLiteral_0, grammarAccess.getGAndOperatorAccess().getANDEnumLiteralDeclaration());
+              		
             }
 
             }
@@ -4257,14 +4332,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4273,26 +4350,28 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGXorOperator"
-    // InternalGExpressions.g:1490:1: ruleGXorOperator returns [Enumerator current=null] : (enumLiteral_0= 'xor' ) ;
+    // InternalGExpressions.g:1488:1: ruleGXorOperator returns [Enumerator current=null] : (enumLiteral_0= 'xor' ) ;
     public final Enumerator ruleGXorOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1492:28: ( (enumLiteral_0= 'xor' ) )
-            // InternalGExpressions.g:1493:1: (enumLiteral_0= 'xor' )
+            // InternalGExpressions.g:1494:2: ( (enumLiteral_0= 'xor' ) )
+            // InternalGExpressions.g:1495:2: (enumLiteral_0= 'xor' )
             {
-            // InternalGExpressions.g:1493:1: (enumLiteral_0= 'xor' )
-            // InternalGExpressions.g:1493:3: enumLiteral_0= 'xor'
+            // InternalGExpressions.g:1495:2: (enumLiteral_0= 'xor' )
+            // InternalGExpressions.g:1496:3: enumLiteral_0= 'xor'
             {
             enumLiteral_0=(Token)match(input,25,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                      current = grammarAccess.getGXorOperatorAccess().getXOREnumLiteralDeclaration().getEnumLiteral().getInstance();
-                      newLeafNode(enumLiteral_0, grammarAccess.getGXorOperatorAccess().getXOREnumLiteralDeclaration()); 
-                  
+              			current = grammarAccess.getGXorOperatorAccess().getXOREnumLiteralDeclaration().getEnumLiteral().getInstance();
+              			newLeafNode(enumLiteral_0, grammarAccess.getGXorOperatorAccess().getXOREnumLiteralDeclaration());
+              		
             }
 
             }
@@ -4301,14 +4380,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4317,26 +4398,28 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGOrOperator"
-    // InternalGExpressions.g:1503:1: ruleGOrOperator returns [Enumerator current=null] : (enumLiteral_0= 'or' ) ;
+    // InternalGExpressions.g:1505:1: ruleGOrOperator returns [Enumerator current=null] : (enumLiteral_0= 'or' ) ;
     public final Enumerator ruleGOrOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1505:28: ( (enumLiteral_0= 'or' ) )
-            // InternalGExpressions.g:1506:1: (enumLiteral_0= 'or' )
+            // InternalGExpressions.g:1511:2: ( (enumLiteral_0= 'or' ) )
+            // InternalGExpressions.g:1512:2: (enumLiteral_0= 'or' )
             {
-            // InternalGExpressions.g:1506:1: (enumLiteral_0= 'or' )
-            // InternalGExpressions.g:1506:3: enumLiteral_0= 'or'
+            // InternalGExpressions.g:1512:2: (enumLiteral_0= 'or' )
+            // InternalGExpressions.g:1513:3: enumLiteral_0= 'or'
             {
             enumLiteral_0=(Token)match(input,26,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-                      current = grammarAccess.getGOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
-                      newLeafNode(enumLiteral_0, grammarAccess.getGOrOperatorAccess().getOREnumLiteralDeclaration()); 
-                  
+              			current = grammarAccess.getGOrOperatorAccess().getOREnumLiteralDeclaration().getEnumLiteral().getInstance();
+              			newLeafNode(enumLiteral_0, grammarAccess.getGOrOperatorAccess().getOREnumLiteralDeclaration());
+              		
             }
 
             }
@@ -4345,14 +4428,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4361,19 +4446,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGEqualityOperator"
-    // InternalGExpressions.g:1516:1: ruleGEqualityOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) ) ;
+    // InternalGExpressions.g:1522:1: ruleGEqualityOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) ) ;
     public final Enumerator ruleGEqualityOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1518:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) ) )
-            // InternalGExpressions.g:1519:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) )
+            // InternalGExpressions.g:1528:2: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) ) )
+            // InternalGExpressions.g:1529:2: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) )
             {
-            // InternalGExpressions.g:1519:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) )
+            // InternalGExpressions.g:1529:2: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '<>' ) )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -4392,17 +4479,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalGExpressions.g:1519:2: (enumLiteral_0= '=' )
+                    // InternalGExpressions.g:1530:3: (enumLiteral_0= '=' )
                     {
-                    // InternalGExpressions.g:1519:2: (enumLiteral_0= '=' )
-                    // InternalGExpressions.g:1519:4: enumLiteral_0= '='
+                    // InternalGExpressions.g:1530:3: (enumLiteral_0= '=' )
+                    // InternalGExpressions.g:1531:4: enumLiteral_0= '='
                     {
                     enumLiteral_0=(Token)match(input,27,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGEqualityOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getGEqualityOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
-                          
+                      				current = grammarAccess.getGEqualityOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_0, grammarAccess.getGEqualityOperatorAccess().getEQUALEnumLiteralDeclaration_0());
+                      			
                     }
 
                     }
@@ -4411,17 +4498,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1525:6: (enumLiteral_1= '<>' )
+                    // InternalGExpressions.g:1538:3: (enumLiteral_1= '<>' )
                     {
-                    // InternalGExpressions.g:1525:6: (enumLiteral_1= '<>' )
-                    // InternalGExpressions.g:1525:8: enumLiteral_1= '<>'
+                    // InternalGExpressions.g:1538:3: (enumLiteral_1= '<>' )
+                    // InternalGExpressions.g:1539:4: enumLiteral_1= '<>'
                     {
                     enumLiteral_1=(Token)match(input,28,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGEqualityOperatorAccess().getNOTEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getGEqualityOperatorAccess().getNOTEQUALEnumLiteralDeclaration_1()); 
-                          
+                      				current = grammarAccess.getGEqualityOperatorAccess().getNOTEQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getGEqualityOperatorAccess().getNOTEQUALEnumLiteralDeclaration_1());
+                      			
                     }
 
                     }
@@ -4436,14 +4523,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4452,7 +4541,7 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGRelationOperator"
-    // InternalGExpressions.g:1535:1: ruleGRelationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) ) ;
+    // InternalGExpressions.g:1549:1: ruleGRelationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) ) ;
     public final Enumerator ruleGRelationOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -4461,12 +4550,14 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
         Token enumLiteral_2=null;
         Token enumLiteral_3=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1537:28: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) ) )
-            // InternalGExpressions.g:1538:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) )
+            // InternalGExpressions.g:1555:2: ( ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) ) )
+            // InternalGExpressions.g:1556:2: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) )
             {
-            // InternalGExpressions.g:1538:1: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) )
+            // InternalGExpressions.g:1556:2: ( (enumLiteral_0= '<' ) | (enumLiteral_1= '>' ) | (enumLiteral_2= '<=' ) | (enumLiteral_3= '>=' ) )
             int alt20=4;
             switch ( input.LA(1) ) {
             case 29:
@@ -4499,17 +4590,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
             switch (alt20) {
                 case 1 :
-                    // InternalGExpressions.g:1538:2: (enumLiteral_0= '<' )
+                    // InternalGExpressions.g:1557:3: (enumLiteral_0= '<' )
                     {
-                    // InternalGExpressions.g:1538:2: (enumLiteral_0= '<' )
-                    // InternalGExpressions.g:1538:4: enumLiteral_0= '<'
+                    // InternalGExpressions.g:1557:3: (enumLiteral_0= '<' )
+                    // InternalGExpressions.g:1558:4: enumLiteral_0= '<'
                     {
                     enumLiteral_0=(Token)match(input,29,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGRelationOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getGRelationOperatorAccess().getLESSEnumLiteralDeclaration_0()); 
-                          
+                      				current = grammarAccess.getGRelationOperatorAccess().getLESSEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_0, grammarAccess.getGRelationOperatorAccess().getLESSEnumLiteralDeclaration_0());
+                      			
                     }
 
                     }
@@ -4518,17 +4609,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1544:6: (enumLiteral_1= '>' )
+                    // InternalGExpressions.g:1565:3: (enumLiteral_1= '>' )
                     {
-                    // InternalGExpressions.g:1544:6: (enumLiteral_1= '>' )
-                    // InternalGExpressions.g:1544:8: enumLiteral_1= '>'
+                    // InternalGExpressions.g:1565:3: (enumLiteral_1= '>' )
+                    // InternalGExpressions.g:1566:4: enumLiteral_1= '>'
                     {
                     enumLiteral_1=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGRelationOperatorAccess().getGREATEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getGRelationOperatorAccess().getGREATEREnumLiteralDeclaration_1()); 
-                          
+                      				current = grammarAccess.getGRelationOperatorAccess().getGREATEREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getGRelationOperatorAccess().getGREATEREnumLiteralDeclaration_1());
+                      			
                     }
 
                     }
@@ -4537,17 +4628,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalGExpressions.g:1550:6: (enumLiteral_2= '<=' )
+                    // InternalGExpressions.g:1573:3: (enumLiteral_2= '<=' )
                     {
-                    // InternalGExpressions.g:1550:6: (enumLiteral_2= '<=' )
-                    // InternalGExpressions.g:1550:8: enumLiteral_2= '<='
+                    // InternalGExpressions.g:1573:3: (enumLiteral_2= '<=' )
+                    // InternalGExpressions.g:1574:4: enumLiteral_2= '<='
                     {
                     enumLiteral_2=(Token)match(input,31,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGRelationOperatorAccess().getLESSEQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_2, grammarAccess.getGRelationOperatorAccess().getLESSEQUALEnumLiteralDeclaration_2()); 
-                          
+                      				current = grammarAccess.getGRelationOperatorAccess().getLESSEQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_2, grammarAccess.getGRelationOperatorAccess().getLESSEQUALEnumLiteralDeclaration_2());
+                      			
                     }
 
                     }
@@ -4556,17 +4647,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalGExpressions.g:1556:6: (enumLiteral_3= '>=' )
+                    // InternalGExpressions.g:1581:3: (enumLiteral_3= '>=' )
                     {
-                    // InternalGExpressions.g:1556:6: (enumLiteral_3= '>=' )
-                    // InternalGExpressions.g:1556:8: enumLiteral_3= '>='
+                    // InternalGExpressions.g:1581:3: (enumLiteral_3= '>=' )
+                    // InternalGExpressions.g:1582:4: enumLiteral_3= '>='
                     {
                     enumLiteral_3=(Token)match(input,32,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGRelationOperatorAccess().getGREATEREQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_3, grammarAccess.getGRelationOperatorAccess().getGREATEREQUALEnumLiteralDeclaration_3()); 
-                          
+                      				current = grammarAccess.getGRelationOperatorAccess().getGREATEREQUALEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_3, grammarAccess.getGRelationOperatorAccess().getGREATEREQUALEnumLiteralDeclaration_3());
+                      			
                     }
 
                     }
@@ -4581,14 +4672,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4597,19 +4690,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGAdditionOperator"
-    // InternalGExpressions.g:1566:1: ruleGAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
+    // InternalGExpressions.g:1592:1: ruleGAdditionOperator returns [Enumerator current=null] : ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) ;
     public final Enumerator ruleGAdditionOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1568:28: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
-            // InternalGExpressions.g:1569:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // InternalGExpressions.g:1598:2: ( ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) ) )
+            // InternalGExpressions.g:1599:2: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             {
-            // InternalGExpressions.g:1569:1: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
+            // InternalGExpressions.g:1599:2: ( (enumLiteral_0= '+' ) | (enumLiteral_1= '-' ) )
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -4628,17 +4723,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt21) {
                 case 1 :
-                    // InternalGExpressions.g:1569:2: (enumLiteral_0= '+' )
+                    // InternalGExpressions.g:1600:3: (enumLiteral_0= '+' )
                     {
-                    // InternalGExpressions.g:1569:2: (enumLiteral_0= '+' )
-                    // InternalGExpressions.g:1569:4: enumLiteral_0= '+'
+                    // InternalGExpressions.g:1600:3: (enumLiteral_0= '+' )
+                    // InternalGExpressions.g:1601:4: enumLiteral_0= '+'
                     {
                     enumLiteral_0=(Token)match(input,33,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGAdditionOperatorAccess().getADDITIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getGAdditionOperatorAccess().getADDITIONEnumLiteralDeclaration_0()); 
-                          
+                      				current = grammarAccess.getGAdditionOperatorAccess().getADDITIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_0, grammarAccess.getGAdditionOperatorAccess().getADDITIONEnumLiteralDeclaration_0());
+                      			
                     }
 
                     }
@@ -4647,17 +4742,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1575:6: (enumLiteral_1= '-' )
+                    // InternalGExpressions.g:1608:3: (enumLiteral_1= '-' )
                     {
-                    // InternalGExpressions.g:1575:6: (enumLiteral_1= '-' )
-                    // InternalGExpressions.g:1575:8: enumLiteral_1= '-'
+                    // InternalGExpressions.g:1608:3: (enumLiteral_1= '-' )
+                    // InternalGExpressions.g:1609:4: enumLiteral_1= '-'
                     {
                     enumLiteral_1=(Token)match(input,34,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGAdditionOperatorAccess().getSUBTRACTIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getGAdditionOperatorAccess().getSUBTRACTIONEnumLiteralDeclaration_1()); 
-                          
+                      				current = grammarAccess.getGAdditionOperatorAccess().getSUBTRACTIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getGAdditionOperatorAccess().getSUBTRACTIONEnumLiteralDeclaration_1());
+                      			
                     }
 
                     }
@@ -4672,14 +4767,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4688,19 +4785,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGMultiplicationOperator"
-    // InternalGExpressions.g:1585:1: ruleGMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) ;
+    // InternalGExpressions.g:1619:1: ruleGMultiplicationOperator returns [Enumerator current=null] : ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) ;
     public final Enumerator ruleGMultiplicationOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1587:28: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) )
-            // InternalGExpressions.g:1588:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
+            // InternalGExpressions.g:1625:2: ( ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) ) )
+            // InternalGExpressions.g:1626:2: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
             {
-            // InternalGExpressions.g:1588:1: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
+            // InternalGExpressions.g:1626:2: ( (enumLiteral_0= '*' ) | (enumLiteral_1= '/' ) )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -4719,17 +4818,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalGExpressions.g:1588:2: (enumLiteral_0= '*' )
+                    // InternalGExpressions.g:1627:3: (enumLiteral_0= '*' )
                     {
-                    // InternalGExpressions.g:1588:2: (enumLiteral_0= '*' )
-                    // InternalGExpressions.g:1588:4: enumLiteral_0= '*'
+                    // InternalGExpressions.g:1627:3: (enumLiteral_0= '*' )
+                    // InternalGExpressions.g:1628:4: enumLiteral_0= '*'
                     {
                     enumLiteral_0=(Token)match(input,35,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGMultiplicationOperatorAccess().getMULTIPLICATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getGMultiplicationOperatorAccess().getMULTIPLICATIONEnumLiteralDeclaration_0()); 
-                          
+                      				current = grammarAccess.getGMultiplicationOperatorAccess().getMULTIPLICATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_0, grammarAccess.getGMultiplicationOperatorAccess().getMULTIPLICATIONEnumLiteralDeclaration_0());
+                      			
                     }
 
                     }
@@ -4738,17 +4837,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1594:6: (enumLiteral_1= '/' )
+                    // InternalGExpressions.g:1635:3: (enumLiteral_1= '/' )
                     {
-                    // InternalGExpressions.g:1594:6: (enumLiteral_1= '/' )
-                    // InternalGExpressions.g:1594:8: enumLiteral_1= '/'
+                    // InternalGExpressions.g:1635:3: (enumLiteral_1= '/' )
+                    // InternalGExpressions.g:1636:4: enumLiteral_1= '/'
                     {
                     enumLiteral_1=(Token)match(input,36,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGMultiplicationOperatorAccess().getDIVISIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getGMultiplicationOperatorAccess().getDIVISIONEnumLiteralDeclaration_1()); 
-                          
+                      				current = grammarAccess.getGMultiplicationOperatorAccess().getDIVISIONEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getGMultiplicationOperatorAccess().getDIVISIONEnumLiteralDeclaration_1());
+                      			
                     }
 
                     }
@@ -4763,14 +4862,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4779,19 +4880,21 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGNegationOperator"
-    // InternalGExpressions.g:1604:1: ruleGNegationOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) ) ;
+    // InternalGExpressions.g:1646:1: ruleGNegationOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) ) ;
     public final Enumerator ruleGNegationOperator() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
 
-         enterRule(); 
+
+        	enterRule();
+
         try {
-            // InternalGExpressions.g:1606:28: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) ) )
-            // InternalGExpressions.g:1607:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) )
+            // InternalGExpressions.g:1652:2: ( ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) ) )
+            // InternalGExpressions.g:1653:2: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) )
             {
-            // InternalGExpressions.g:1607:1: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) )
+            // InternalGExpressions.g:1653:2: ( (enumLiteral_0= 'not' ) | (enumLiteral_1= '~' ) )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -4810,17 +4913,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // InternalGExpressions.g:1607:2: (enumLiteral_0= 'not' )
+                    // InternalGExpressions.g:1654:3: (enumLiteral_0= 'not' )
                     {
-                    // InternalGExpressions.g:1607:2: (enumLiteral_0= 'not' )
-                    // InternalGExpressions.g:1607:4: enumLiteral_0= 'not'
+                    // InternalGExpressions.g:1654:3: (enumLiteral_0= 'not' )
+                    // InternalGExpressions.g:1655:4: enumLiteral_0= 'not'
                     {
                     enumLiteral_0=(Token)match(input,37,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGNegationOperatorAccess().getNEGATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_0, grammarAccess.getGNegationOperatorAccess().getNEGATIONEnumLiteralDeclaration_0()); 
-                          
+                      				current = grammarAccess.getGNegationOperatorAccess().getNEGATIONEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_0, grammarAccess.getGNegationOperatorAccess().getNEGATIONEnumLiteralDeclaration_0());
+                      			
                     }
 
                     }
@@ -4829,17 +4932,17 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalGExpressions.g:1613:6: (enumLiteral_1= '~' )
+                    // InternalGExpressions.g:1662:3: (enumLiteral_1= '~' )
                     {
-                    // InternalGExpressions.g:1613:6: (enumLiteral_1= '~' )
-                    // InternalGExpressions.g:1613:8: enumLiteral_1= '~'
+                    // InternalGExpressions.g:1662:3: (enumLiteral_1= '~' )
+                    // InternalGExpressions.g:1663:4: enumLiteral_1= '~'
                     {
                     enumLiteral_1=(Token)match(input,38,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                              current = grammarAccess.getGNegationOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                              newLeafNode(enumLiteral_1, grammarAccess.getGNegationOperatorAccess().getMINUSEnumLiteralDeclaration_1()); 
-                          
+                      				current = grammarAccess.getGNegationOperatorAccess().getMINUSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_1, grammarAccess.getGNegationOperatorAccess().getMINUSEnumLiteralDeclaration_1());
+                      			
                     }
 
                     }
@@ -4854,14 +4957,16 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
             }
 
             if ( state.backtracking==0 ) {
-               leaveRule(); 
+
+              	leaveRule();
+
             }
         }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
+
+            catch (RecognitionException re) {
+                recover(input,re);
                 appendSkippedTokens();
-            } 
+            }
         finally {
         }
         return current;
@@ -4870,8 +4975,8 @@ public class InternalGExpressionsParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred1_InternalGExpressions
     public final void synpred1_InternalGExpressions_fragment() throws RecognitionException {   
-        // InternalGExpressions.g:1454:3: ( '.' )
-        // InternalGExpressions.g:1455:2: '.'
+        // InternalGExpressions.g:1452:5: ( '.' )
+        // InternalGExpressions.g:1452:6: '.'
         {
         match(input,22,FOLLOW_2); if (state.failed) return ;
 

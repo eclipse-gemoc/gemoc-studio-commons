@@ -32,6 +32,7 @@
 	<module>org.eclipse.gemoc.gexpressions.edit</module>
 	<module>org.eclipse.gemoc.gexpressions.editor</module>
 	<module>org.eclipse.gemoc.gexpressions.xtext</module>
+	<module>org.eclipse.gemoc.gexpressions.xtext.ide</module>
 	<module>org.eclipse.gemoc.gexpressions.xtext.ui</module>
   </modules>
 </project>

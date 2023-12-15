@@ -79,6 +79,7 @@ import org.eclipse.swt.events.ControlEvent;
 
 import org.eclipse.swt.graphics.Point;
 
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FillLayout;
 
 import org.eclipse.swt.widgets.Composite;
@@ -165,9 +166,6 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.eclipse.gemoc.gexpressions.provider.GexpressionsItemProviderAdapterFactory;
-
-import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -336,6 +334,7 @@ public class GexpressionsEditor
 	 */
 	protected IPartListener partListener =
 		new IPartListener() {
+			@Override
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
@@ -354,15 +353,19 @@ public class GexpressionsEditor
 					handleActivate();
 				}
 			}
+			@Override
 			public void partBroughtToTop(IWorkbenchPart p) {
 				// Ignore.
 			}
+			@Override
 			public void partClosed(IWorkbenchPart p) {
 				// Ignore.
 			}
+			@Override
 			public void partDeactivated(IWorkbenchPart p) {
 				// Ignore.
 			}
+			@Override
 			public void partOpened(IWorkbenchPart p) {
 				// Ignore.
 			}
@@ -416,6 +419,8 @@ public class GexpressionsEditor
 	 */
 	protected EContentAdapter problemIndicationAdapter =
 		new EContentAdapter() {
+			protected boolean dispatching;
+
 			@Override
 			public void notifyChanged(Notification notification) {
 				if (notification.getNotifier() instanceof Resource) {
@@ -431,21 +436,27 @@ public class GexpressionsEditor
 							else {
 								resourceToDiagnosticMap.remove(resource);
 							}
-
-							if (updateProblemIndication) {
-								getSite().getShell().getDisplay().asyncExec
-									(new Runnable() {
-										 public void run() {
-											 updateProblemIndication();
-										 }
-									 });
-							}
+							dispatchUpdateProblemIndication();
 							break;
 						}
 					}
 				}
 				else {
 					super.notifyChanged(notification);
+				}
+			}
+
+			protected void dispatchUpdateProblemIndication() {
+				if (updateProblemIndication && !dispatching) {
+					dispatching = true;
+					getSite().getShell().getDisplay().asyncExec
+						(new Runnable() {
+							 @Override
+							 public void run() {
+								 dispatching = false;
+								 updateProblemIndication();
+							 }
+						 });
 				}
 			}
 
@@ -458,14 +469,7 @@ public class GexpressionsEditor
 			protected void unsetTarget(Resource target) {
 				basicUnsetTarget(target);
 				resourceToDiagnosticMap.remove(target);
-				if (updateProblemIndication) {
-					getSite().getShell().getDisplay().asyncExec
-						(new Runnable() {
-							 public void run() {
-								 updateProblemIndication();
-							 }
-						 });
-				}
+				dispatchUpdateProblemIndication();
 			}
 		};
 
@@ -477,6 +481,7 @@ public class GexpressionsEditor
 	 */
 	protected IResourceChangeListener resourceChangeListener =
 		new IResourceChangeListener() {
+			@Override
 			public void resourceChanged(IResourceChangeEvent event) {
 				IResourceDelta delta = event.getDelta();
 				try {
@@ -485,6 +490,7 @@ public class GexpressionsEditor
 						protected Collection<Resource> changedResources = new ArrayList<Resource>();
 						protected Collection<Resource> removedResources = new ArrayList<Resource>();
 
+						@Override
 						public boolean visit(IResourceDelta delta) {
 							if (delta.getResource().getType() == IResource.FILE) {
 								if (delta.getKind() == IResourceDelta.REMOVED ||
@@ -520,6 +526,7 @@ public class GexpressionsEditor
 					if (!visitor.getRemovedResources().isEmpty()) {
 						getSite().getShell().getDisplay().asyncExec
 							(new Runnable() {
+								 @Override
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
@@ -532,6 +539,7 @@ public class GexpressionsEditor
 					if (!visitor.getChangedResources().isEmpty()) {
 						getSite().getShell().getDisplay().asyncExec
 							(new Runnable() {
+								 @Override
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
 									 if (getSite().getPage().getActiveEditor() == GexpressionsEditor.this) {
@@ -590,8 +598,9 @@ public class GexpressionsEditor
 	 */
 	protected void handleChangedResources() {
 		if (!changedResources.isEmpty() && (!isDirty() || handleDirtyConflict())) {
+			ResourceSet resourceSet = editingDomain.getResourceSet();
 			if (isDirty()) {
-				changedResources.addAll(editingDomain.getResourceSet().getResources());
+				changedResources.addAll(resourceSet.getResources());
 			}
 			editingDomain.getCommandStack().flush();
 
@@ -600,7 +609,7 @@ public class GexpressionsEditor
 				if (resource.isLoaded()) {
 					resource.unload();
 					try {
-						resource.load(Collections.EMPTY_MAP);
+						resource.load(resourceSet.getLoadOptions());
 					}
 					catch (IOException exception) {
 						if (!resourceToDiagnosticMap.containsKey(resource)) {
@@ -663,14 +672,11 @@ public class GexpressionsEditor
 			}
 
 			if (markerHelper.hasMarkers(editingDomain.getResourceSet())) {
-				markerHelper.deleteMarkers(editingDomain.getResourceSet());
-				if (diagnostic.getSeverity() != Diagnostic.OK) {
-					try {
-						markerHelper.createMarkers(diagnostic);
-					}
-					catch (CoreException exception) {
-						GexpressionsEditorPlugin.INSTANCE.log(exception);
-					}
+				try {
+					markerHelper.updateMarkers(diagnostic);
+				}
+				catch (CoreException exception) {
+					GexpressionsEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		}
@@ -714,7 +720,6 @@ public class GexpressionsEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GexpressionsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
@@ -725,9 +730,11 @@ public class GexpressionsEditor
 		//
 		commandStack.addCommandStackListener
 			(new CommandStackListener() {
+				 @Override
 				 public void commandStackChanged(final EventObject event) {
 					 getContainer().getDisplay().asyncExec
 						 (new Runnable() {
+							  @Override
 							  public void run() {
 								  firePropertyChange(IEditorPart.PROP_DIRTY);
 
@@ -739,7 +746,7 @@ public class GexpressionsEditor
 								  }
 								  for (Iterator<PropertySheetPage> i = propertySheetPages.iterator(); i.hasNext(); ) {
 									  PropertySheetPage propertySheetPage = i.next();
-									  if (propertySheetPage.getControl().isDisposed()) {
+									  if (propertySheetPage.getControl() == null || propertySheetPage.getControl().isDisposed()) {
 										  i.remove();
 									  }
 									  else {
@@ -780,6 +787,7 @@ public class GexpressionsEditor
 		if (theSelection != null && !theSelection.isEmpty()) {
 			Runnable runnable =
 				new Runnable() {
+					@Override
 					public void run() {
 						// Try to select the items in the current content viewer of the editor.
 						//
@@ -800,6 +808,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EditingDomain getEditingDomain() {
 		return editingDomain;
 	}
@@ -896,6 +905,7 @@ public class GexpressionsEditor
 					new ISelectionChangedListener() {
 						// This just notifies those things that are affected by the section.
 						//
+						@Override
 						public void selectionChanged(SelectionChangedEvent selectionChangedEvent) {
 							setSelection(selectionChangedEvent.getSelection());
 						}
@@ -930,6 +940,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Viewer getViewer() {
 		return currentViewer;
 	}
@@ -1052,6 +1063,7 @@ public class GexpressionsEditor
 
 				selectionViewer = (TreeViewer)viewerPane.getViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				selectionViewer.setUseHashlookup(true);
 
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 				selectionViewer.setInput(editingDomain.getResourceSet());
@@ -1234,8 +1246,11 @@ public class GexpressionsEditor
 
 			getSite().getShell().getDisplay().asyncExec
 				(new Runnable() {
+					 @Override
 					 public void run() {
-						 setActivePage(0);
+						 if (!getContainer().isDisposed()) {
+							 setActivePage(0);
+						 }
 					 }
 				 });
 		}
@@ -1258,6 +1273,7 @@ public class GexpressionsEditor
 
 		getSite().getShell().getDisplay().asyncExec
 			(new Runnable() {
+				 @Override
 				 public void run() {
 					 updateProblemIndication();
 				 }
@@ -1275,9 +1291,9 @@ public class GexpressionsEditor
 		if (getPageCount() <= 1) {
 			setPageText(0, "");
 			if (getContainer() instanceof CTabFolder) {
-				((CTabFolder)getContainer()).setTabHeight(1);
 				Point point = getContainer().getSize();
-				getContainer().setSize(point.x, point.y + 6);
+				Rectangle clientArea = getContainer().getClientArea();
+				getContainer().setSize(point.x,  2 * point.y - clientArea.height - clientArea.y);
 			}
 		}
 	}
@@ -1293,9 +1309,9 @@ public class GexpressionsEditor
 		if (getPageCount() > 1) {
 			setPageText(0, getString("_UI_SelectionPage_label"));
 			if (getContainer() instanceof CTabFolder) {
-				((CTabFolder)getContainer()).setTabHeight(SWT.DEFAULT);
 				Point point = getContainer().getSize();
-				getContainer().setSize(point.x, point.y - 6);
+				Rectangle clientArea = getContainer().getClientArea();
+				getContainer().setSize(point.x, clientArea.height + clientArea.y);
 			}
 		}
 	}
@@ -1323,15 +1339,15 @@ public class GexpressionsEditor
 	 */
 	@SuppressWarnings("rawtypes")
 	@Override
-	public Object getAdapter(Class key) {
+	public <T> T getAdapter(Class<T> key) {
 		if (key.equals(IContentOutlinePage.class)) {
-			return showOutlineView() ? getContentOutlinePage() : null;
+			return showOutlineView() ? key.cast(getContentOutlinePage()) : null;
 		}
 		else if (key.equals(IPropertySheetPage.class)) {
-			return getPropertySheetPage();
+			return key.cast(getPropertySheetPage());
 		}
 		else if (key.equals(IGotoMarker.class)) {
-			return this;
+			return key.cast(this);
 		}
 		else {
 			return super.getAdapter(key);
@@ -1357,6 +1373,7 @@ public class GexpressionsEditor
 
 					// Set up the tree viewer.
 					//
+					contentOutlineViewer.setUseHashlookup(true);
 					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 					contentOutlineViewer.setInput(editingDomain.getResourceSet());
@@ -1393,6 +1410,7 @@ public class GexpressionsEditor
 				(new ISelectionChangedListener() {
 					 // This ensures that we handle selections correctly.
 					 //
+					 @Override
 					 public void selectionChanged(SelectionChangedEvent event) {
 						 handleContentOutlineSelection(event.getSelection());
 					 }
@@ -1410,7 +1428,7 @@ public class GexpressionsEditor
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
 		PropertySheetPage propertySheetPage =
-			new ExtendedPropertySheetPage(editingDomain) {
+			new ExtendedPropertySheetPage(editingDomain, ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
 					GexpressionsEditor.this.setSelectionToViewer(selection);
@@ -1504,7 +1522,9 @@ public class GexpressionsEditor
 					// Save the resources to the file system.
 					//
 					boolean first = true;
-					for (Resource resource : editingDomain.getResourceSet().getResources()) {
+					List<Resource> resources = editingDomain.getResourceSet().getResources();
+					for (int i = 0; i < resources.size(); ++i) {
+						Resource resource = resources.get(i);
 						if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 							try {
 								long timeStamp = resource.getTimeStamp();
@@ -1615,6 +1635,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void gotoMarker(IMarker marker) {
 		List<?> targetObjects = markerHelper.getTargetObjects(editingDomain, marker);
 		if (!targetObjects.isEmpty()) {
@@ -1659,6 +1680,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.add(listener);
 	}
@@ -1669,6 +1691,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeSelectionChangedListener(ISelectionChangedListener listener) {
 		selectionChangedListeners.remove(listener);
 	}
@@ -1679,6 +1702,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ISelection getSelection() {
 		return editorSelection;
 	}
@@ -1690,6 +1714,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSelection(ISelection selection) {
 		editorSelection = selection;
 
@@ -1759,6 +1784,7 @@ public class GexpressionsEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
 		((IMenuListener)getEditorSite().getActionBarContributor()).menuAboutToShow(menuManager);
 	}

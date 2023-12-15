@@ -18,8 +18,6 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
-
 /**
  * This is the central singleton for the Gexpressions editor plugin.
  * <!-- begin-user-doc -->
@@ -52,7 +50,6 @@ public final class GexpressionsEditorPlugin extends EMFPlugin {
 	public GexpressionsEditorPlugin() {
 		super
 			(new ResourceLocator [] {
-				EcoreEditPlugin.INSTANCE,
 			});
 	}
 
