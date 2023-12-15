@@ -77,7 +77,7 @@ public enum GRelationOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LESS
-	 * @model literal="<"
+	 * @model literal="&lt;"
 	 * @generated
 	 * @ordered
 	 */
@@ -92,7 +92,7 @@ public enum GRelationOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GREATER
-	 * @model literal=">"
+	 * @model literal="&gt;"
 	 * @generated
 	 * @ordered
 	 */
@@ -107,7 +107,7 @@ public enum GRelationOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LESSEQUAL
-	 * @model literal="<="
+	 * @model literal="&lt;="
 	 * @generated
 	 * @ordered
 	 */
@@ -122,7 +122,7 @@ public enum GRelationOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GREATEREQUAL
-	 * @model literal=">="
+	 * @model literal="&gt;="
 	 * @generated
 	 * @ordered
 	 */
@@ -242,6 +242,7 @@ public enum GRelationOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 	  return value;
 	}
@@ -251,6 +252,7 @@ public enum GRelationOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 	  return name;
 	}
@@ -260,6 +262,7 @@ public enum GRelationOperator implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLiteral() {
 	  return literal;
 	}

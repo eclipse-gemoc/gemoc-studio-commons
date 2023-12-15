@@ -79,6 +79,7 @@ public class GIntegerExpressionImpl extends GNumericExpressionImpl implements GI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getValue() {
 		return value;
 	}
@@ -88,6 +89,7 @@ public class GIntegerExpressionImpl extends GNumericExpressionImpl implements GI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(int newValue) {
 		int oldValue = value;
 		value = newValue;
@@ -162,7 +164,7 @@ public class GIntegerExpressionImpl extends GNumericExpressionImpl implements GI
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

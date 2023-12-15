@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GExpressions Abstract Syntax
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.gemoc.gexpressions;singleton:=true
 Bundle-Version: 3.3.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: Eclipse GEMOC Project
+Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Export-Package: org.eclipse.gemoc.gexpressions,
  org.eclipse.gemoc.gexpressions.impl,
@@ -13,6 +13,6 @@ Export-Package: org.eclipse.gemoc.gexpressions,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;bundle-version="2.10.2";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.xtext
 Automatic-Module-Name: org.eclipse.gemoc.gexpressions

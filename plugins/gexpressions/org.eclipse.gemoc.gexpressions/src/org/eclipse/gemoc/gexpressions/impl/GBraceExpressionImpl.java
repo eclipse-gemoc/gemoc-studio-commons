@@ -72,6 +72,7 @@ public class GBraceExpressionImpl extends GPrimaryExpressionImpl implements GBra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getInnerExpression() {
 		return innerExpression;
 	}
@@ -96,6 +97,7 @@ public class GBraceExpressionImpl extends GPrimaryExpressionImpl implements GBra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setInnerExpression(GExpression newInnerExpression) {
 		if (newInnerExpression != innerExpression) {
 			NotificationChain msgs = null;

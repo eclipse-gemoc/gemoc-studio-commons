@@ -72,6 +72,7 @@ public abstract class GUnaryOperatorExpressionImpl extends GExpressionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getOperand() {
 		return operand;
 	}
@@ -96,6 +97,7 @@ public abstract class GUnaryOperatorExpressionImpl extends GExpressionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperand(GExpression newOperand) {
 		if (newOperand != operand) {
 			NotificationChain msgs = null;

@@ -80,6 +80,7 @@ public class GOrExpressionImpl extends GBooleanOperatorExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GOrOperator getOperator() {
 		return operator;
 	}
@@ -89,6 +90,7 @@ public class GOrExpressionImpl extends GBooleanOperatorExpressionImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperator(GOrOperator newOperator) {
 		GOrOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
@@ -163,7 +165,7 @@ public class GOrExpressionImpl extends GBooleanOperatorExpressionImpl implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (operator: ");
 		result.append(operator);
 		result.append(')');

@@ -83,6 +83,7 @@ public abstract class GBinaryOperatorExpressionImpl extends GExpressionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getLeftOperand() {
 		return leftOperand;
 	}
@@ -107,6 +108,7 @@ public abstract class GBinaryOperatorExpressionImpl extends GExpressionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLeftOperand(GExpression newLeftOperand) {
 		if (newLeftOperand != leftOperand) {
 			NotificationChain msgs = null;
@@ -126,6 +128,7 @@ public abstract class GBinaryOperatorExpressionImpl extends GExpressionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getRightOperand() {
 		return rightOperand;
 	}
@@ -150,6 +153,7 @@ public abstract class GBinaryOperatorExpressionImpl extends GExpressionImpl impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRightOperand(GExpression newRightOperand) {
 		if (newRightOperand != rightOperand) {
 			NotificationChain msgs = null;
