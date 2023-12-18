@@ -80,6 +80,7 @@ public class GRelationExpressionImpl extends GBinaryOperatorExpressionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GRelationOperator getOperator() {
 		return operator;
 	}
@@ -89,6 +90,7 @@ public class GRelationExpressionImpl extends GBinaryOperatorExpressionImpl imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOperator(GRelationOperator newOperator) {
 		GRelationOperator oldOperator = operator;
 		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
@@ -163,7 +165,7 @@ public class GRelationExpressionImpl extends GBinaryOperatorExpressionImpl imple
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (operator: ");
 		result.append(operator);
 		result.append(')');

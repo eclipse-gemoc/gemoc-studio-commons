@@ -71,6 +71,7 @@ public class GEnumLiteralExpressionImpl extends GPrimaryExpressionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnumLiteral getValue() {
 		if (value != null && value.eIsProxy()) {
 			InternalEObject oldValue = (InternalEObject)value;
@@ -97,6 +98,7 @@ public class GEnumLiteralExpressionImpl extends GPrimaryExpressionImpl implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(EEnumLiteral newValue) {
 		EEnumLiteral oldValue = value;
 		value = newValue;

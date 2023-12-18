@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EcorePackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.gemoc.gexpressions.GAdditionExpression;
@@ -323,7 +321,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link GexpressionsPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -337,12 +335,10 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 		if (isInited) return (GexpressionsPackage)EPackage.Registry.INSTANCE.getEPackage(GexpressionsPackage.eNS_URI);
 
 		// Obtain or create and register package
-		GexpressionsPackageImpl theGexpressionsPackage = (GexpressionsPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof GexpressionsPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new GexpressionsPackageImpl());
+		Object registeredGexpressionsPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		GexpressionsPackageImpl theGexpressionsPackage = registeredGexpressionsPackage instanceof GexpressionsPackageImpl ? (GexpressionsPackageImpl)registeredGexpressionsPackage : new GexpressionsPackageImpl();
 
 		isInited = true;
-
-		// Initialize simple dependencies
-		EcorePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theGexpressionsPackage.createPackageContents();
@@ -353,7 +349,6 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 		// Mark meta-data to indicate it can't be changed
 		theGexpressionsPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(GexpressionsPackage.eNS_URI, theGexpressionsPackage);
 		return theGexpressionsPackage;
@@ -364,6 +359,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGProgram() {
 		return gProgramEClass;
 	}
@@ -373,6 +369,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGProgram_Imports() {
 		return (EReference)gProgramEClass.getEStructuralFeatures().get(0);
 	}
@@ -382,6 +379,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGProgram_Expressions() {
 		return (EReference)gProgramEClass.getEStructuralFeatures().get(1);
 	}
@@ -391,6 +389,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGImportStatement() {
 		return gImportStatementEClass;
 	}
@@ -400,6 +399,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGImportStatement_ImportURI() {
 		return (EAttribute)gImportStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -409,6 +409,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGExpression() {
 		return gExpressionEClass;
 	}
@@ -418,6 +419,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGNavigationExpression() {
 		return gNavigationExpressionEClass;
 	}
@@ -427,6 +429,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGNavigationExpression_Body() {
 		return (EReference)gNavigationExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -436,6 +439,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGNavigationExpression_ReferencedEObject() {
 		return (EReference)gNavigationExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -445,6 +449,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGReferenceExpression() {
 		return gReferenceExpressionEClass;
 	}
@@ -454,6 +459,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGReferenceExpression_ReferencedObject() {
 		return (EAttribute)gReferenceExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -463,6 +469,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGReferenceExpression_ReferencedEObject() {
 		return (EReference)gReferenceExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -472,6 +479,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGPrimaryExpression() {
 		return gPrimaryExpressionEClass;
 	}
@@ -481,6 +489,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGStringExpression() {
 		return gStringExpressionEClass;
 	}
@@ -490,6 +499,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGStringExpression_Value() {
 		return (EAttribute)gStringExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -499,6 +509,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGBooleanExpression() {
 		return gBooleanExpressionEClass;
 	}
@@ -508,6 +519,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGBooleanExpression_Value() {
 		return (EAttribute)gBooleanExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -517,6 +529,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGNumericExpression() {
 		return gNumericExpressionEClass;
 	}
@@ -526,6 +539,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGIntegerExpression() {
 		return gIntegerExpressionEClass;
 	}
@@ -535,6 +549,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGIntegerExpression_Value() {
 		return (EAttribute)gIntegerExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -544,6 +559,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGDoubleExpression() {
 		return gDoubleExpressionEClass;
 	}
@@ -553,6 +569,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGDoubleExpression_Value() {
 		return (EAttribute)gDoubleExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -562,6 +579,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGIfExpression() {
 		return gIfExpressionEClass;
 	}
@@ -571,6 +589,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGIfExpression_Condition() {
 		return (EReference)gIfExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -580,6 +599,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGIfExpression_ThenExpression() {
 		return (EReference)gIfExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -589,6 +609,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGIfExpression_ElseExpression() {
 		return (EReference)gIfExpressionEClass.getEStructuralFeatures().get(2);
 	}
@@ -598,6 +619,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGBraceExpression() {
 		return gBraceExpressionEClass;
 	}
@@ -607,6 +629,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGBraceExpression_InnerExpression() {
 		return (EReference)gBraceExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -616,6 +639,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGEnumLiteralExpression() {
 		return gEnumLiteralExpressionEClass;
 	}
@@ -625,6 +649,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGEnumLiteralExpression_Value() {
 		return (EReference)gEnumLiteralExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -634,6 +659,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGBinaryOperatorExpression() {
 		return gBinaryOperatorExpressionEClass;
 	}
@@ -643,6 +669,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGBinaryOperatorExpression_LeftOperand() {
 		return (EReference)gBinaryOperatorExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -652,6 +679,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGBinaryOperatorExpression_RightOperand() {
 		return (EReference)gBinaryOperatorExpressionEClass.getEStructuralFeatures().get(1);
 	}
@@ -661,6 +689,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGUnaryOperatorExpression() {
 		return gUnaryOperatorExpressionEClass;
 	}
@@ -670,6 +699,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getGUnaryOperatorExpression_Operand() {
 		return (EReference)gUnaryOperatorExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -679,6 +709,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGBooleanOperatorExpression() {
 		return gBooleanOperatorExpressionEClass;
 	}
@@ -688,6 +719,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGAndExpression() {
 		return gAndExpressionEClass;
 	}
@@ -697,6 +729,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGAndExpression_Operator() {
 		return (EAttribute)gAndExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -706,6 +739,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGXorExpression() {
 		return gXorExpressionEClass;
 	}
@@ -715,6 +749,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGXorExpression_Operator() {
 		return (EAttribute)gXorExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -724,6 +759,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGOrExpression() {
 		return gOrExpressionEClass;
 	}
@@ -733,6 +769,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGOrExpression_Operator() {
 		return (EAttribute)gOrExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -742,6 +779,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGEqualityExpression() {
 		return gEqualityExpressionEClass;
 	}
@@ -751,6 +789,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGEqualityExpression_Operator() {
 		return (EAttribute)gEqualityExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -760,6 +799,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGRelationExpression() {
 		return gRelationExpressionEClass;
 	}
@@ -769,6 +809,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGRelationExpression_Operator() {
 		return (EAttribute)gRelationExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -778,6 +819,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGAdditionExpression() {
 		return gAdditionExpressionEClass;
 	}
@@ -787,6 +829,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGAdditionExpression_Operator() {
 		return (EAttribute)gAdditionExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -796,6 +839,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGMultiplicationExpression() {
 		return gMultiplicationExpressionEClass;
 	}
@@ -805,6 +849,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGMultiplicationExpression_Operator() {
 		return (EAttribute)gMultiplicationExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -814,6 +859,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getGNegationExpression() {
 		return gNegationExpressionEClass;
 	}
@@ -823,6 +869,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getGNegationExpression_Operator() {
 		return (EAttribute)gNegationExpressionEClass.getEStructuralFeatures().get(0);
 	}
@@ -832,6 +879,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGAndOperator() {
 		return gAndOperatorEEnum;
 	}
@@ -841,6 +889,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGXorOperator() {
 		return gXorOperatorEEnum;
 	}
@@ -850,6 +899,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGOrOperator() {
 		return gOrOperatorEEnum;
 	}
@@ -859,6 +909,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGEqualityOperator() {
 		return gEqualityOperatorEEnum;
 	}
@@ -868,6 +919,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGRelationOperator() {
 		return gRelationOperatorEEnum;
 	}
@@ -877,6 +929,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGAdditionOperator() {
 		return gAdditionOperatorEEnum;
 	}
@@ -886,6 +939,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGMultiplicationOperator() {
 		return gMultiplicationOperatorEEnum;
 	}
@@ -895,6 +949,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getGNegationOperator() {
 		return gNegationOperatorEEnum;
 	}
@@ -904,6 +959,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GexpressionsFactory getGexpressionsFactory() {
 		return (GexpressionsFactory)getEFactoryInstance();
 	}
@@ -1038,9 +1094,6 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
-		// Obtain other dependent packages
-		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -1081,7 +1134,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 
 		initEClass(gNavigationExpressionEClass, GNavigationExpression.class, "GNavigationExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGNavigationExpression_Body(), this.getGExpression(), null, "body", null, 1, 1, GNavigationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGNavigationExpression_ReferencedEObject(), theEcorePackage.getEObject(), null, "referencedEObject", null, 1, 1, GNavigationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGNavigationExpression_ReferencedEObject(), ecorePackage.getEObject(), null, "referencedEObject", null, 1, 1, GNavigationExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gReferenceExpressionEClass, GReferenceExpression.class, "GReferenceExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGReferenceExpression_ReferencedObject(), ecorePackage.getEJavaObject(), "referencedObject", null, 0, 1, GReferenceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1112,7 +1165,7 @@ public class GexpressionsPackageImpl extends EPackageImpl implements Gexpression
 		initEReference(getGBraceExpression_InnerExpression(), this.getGExpression(), null, "innerExpression", null, 1, 1, GBraceExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gEnumLiteralExpressionEClass, GEnumLiteralExpression.class, "GEnumLiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGEnumLiteralExpression_Value(), theEcorePackage.getEEnumLiteral(), null, "value", null, 1, 1, GEnumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGEnumLiteralExpression_Value(), ecorePackage.getEEnumLiteral(), null, "value", null, 1, 1, GEnumLiteralExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gBinaryOperatorExpressionEClass, GBinaryOperatorExpression.class, "GBinaryOperatorExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGBinaryOperatorExpression_LeftOperand(), this.getGExpression(), null, "leftOperand", null, 1, 1, GBinaryOperatorExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

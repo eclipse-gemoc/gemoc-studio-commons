@@ -68,7 +68,7 @@ GAdditionExpression returns GExpression:
 	GMultiplicationExpression
 	({GAdditionExpression.leftOperand = current}
 		operator = GAdditionOperator
-		rightOperand = GMultiplicationExpression
+		rightOperand = GMultiplicationExpression 
 	)*
 ;
 

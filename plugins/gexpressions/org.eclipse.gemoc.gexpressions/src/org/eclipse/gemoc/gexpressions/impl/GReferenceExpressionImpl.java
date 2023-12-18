@@ -92,6 +92,7 @@ public class GReferenceExpressionImpl extends GExpressionImpl implements GRefere
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Object getReferencedObject() {
 		return referencedObject;
 	}
@@ -101,6 +102,7 @@ public class GReferenceExpressionImpl extends GExpressionImpl implements GRefere
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReferencedObject(Object newReferencedObject) {
 		Object oldReferencedObject = referencedObject;
 		referencedObject = newReferencedObject;
@@ -113,6 +115,7 @@ public class GReferenceExpressionImpl extends GExpressionImpl implements GRefere
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getReferencedEObject() {
 		if (referencedEObject != null && referencedEObject.eIsProxy()) {
 			InternalEObject oldReferencedEObject = (InternalEObject)referencedEObject;
@@ -139,6 +142,7 @@ public class GReferenceExpressionImpl extends GExpressionImpl implements GRefere
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReferencedEObject(EObject newReferencedEObject) {
 		EObject oldReferencedEObject = referencedEObject;
 		referencedEObject = newReferencedEObject;
@@ -224,7 +228,7 @@ public class GReferenceExpressionImpl extends GExpressionImpl implements GRefere
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (referencedObject: ");
 		result.append(referencedObject);
 		result.append(')');

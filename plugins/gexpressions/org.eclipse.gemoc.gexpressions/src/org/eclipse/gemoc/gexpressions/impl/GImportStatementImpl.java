@@ -80,6 +80,7 @@ public class GImportStatementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getImportURI() {
 		return importURI;
 	}
@@ -89,6 +90,7 @@ public class GImportStatementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImportURI(String newImportURI) {
 		String oldImportURI = importURI;
 		importURI = newImportURI;
@@ -163,7 +165,7 @@ public class GImportStatementImpl extends MinimalEObjectImpl.Container implement
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (importURI: ");
 		result.append(importURI);
 		result.append(')');

@@ -16,7 +16,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" eType="#//GExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="referencedEObject" lowerBound="1"
-        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GReferenceExpression" eSuperTypes="#//GExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencedObject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
@@ -52,7 +52,7 @@
         eType="#//GExpression" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GEnumLiteralExpression" eSuperTypes="#//GPrimaryExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EEnumLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EEnumLiteral"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GBinaryOperatorExpression" abstract="true"
       eSuperTypes="#//GExpression">

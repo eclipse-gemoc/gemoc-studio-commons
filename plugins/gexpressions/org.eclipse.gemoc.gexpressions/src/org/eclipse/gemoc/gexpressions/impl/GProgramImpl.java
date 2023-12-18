@@ -90,6 +90,7 @@ public class GProgramImpl extends MinimalEObjectImpl.Container implements GProgr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<GImportStatement> getImports() {
 		if (imports == null) {
 			imports = new EObjectContainmentEList<GImportStatement>(GImportStatement.class, this, GexpressionsPackage.GPROGRAM__IMPORTS);
@@ -102,6 +103,7 @@ public class GProgramImpl extends MinimalEObjectImpl.Container implements GProgr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<GExpression> getExpressions() {
 		if (expressions == null) {
 			expressions = new EObjectContainmentEList<GExpression>(GExpression.class, this, GexpressionsPackage.GPROGRAM__EXPRESSIONS);

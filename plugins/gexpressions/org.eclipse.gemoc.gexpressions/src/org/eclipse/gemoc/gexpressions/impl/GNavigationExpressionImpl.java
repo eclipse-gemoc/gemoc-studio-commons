@@ -84,6 +84,7 @@ public class GNavigationExpressionImpl extends GExpressionImpl implements GNavig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getBody() {
 		return body;
 	}
@@ -108,6 +109,7 @@ public class GNavigationExpressionImpl extends GExpressionImpl implements GNavig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBody(GExpression newBody) {
 		if (newBody != body) {
 			NotificationChain msgs = null;
@@ -127,6 +129,7 @@ public class GNavigationExpressionImpl extends GExpressionImpl implements GNavig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EObject getReferencedEObject() {
 		if (referencedEObject != null && referencedEObject.eIsProxy()) {
 			InternalEObject oldReferencedEObject = (InternalEObject)referencedEObject;
@@ -153,6 +156,7 @@ public class GNavigationExpressionImpl extends GExpressionImpl implements GNavig
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setReferencedEObject(EObject newReferencedEObject) {
 		EObject oldReferencedEObject = referencedEObject;
 		referencedEObject = newReferencedEObject;

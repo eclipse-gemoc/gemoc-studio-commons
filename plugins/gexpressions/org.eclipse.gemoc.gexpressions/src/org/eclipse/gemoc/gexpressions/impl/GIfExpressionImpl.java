@@ -94,6 +94,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getCondition() {
 		return condition;
 	}
@@ -118,6 +119,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(GExpression newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
@@ -137,6 +139,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getThenExpression() {
 		return thenExpression;
 	}
@@ -161,6 +164,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThenExpression(GExpression newThenExpression) {
 		if (newThenExpression != thenExpression) {
 			NotificationChain msgs = null;
@@ -180,6 +184,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GExpression getElseExpression() {
 		return elseExpression;
 	}
@@ -204,6 +209,7 @@ public class GIfExpressionImpl extends GPrimaryExpressionImpl implements GIfExpr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElseExpression(GExpression newElseExpression) {
 		if (newElseExpression != elseExpression) {
 			NotificationChain msgs = null;
