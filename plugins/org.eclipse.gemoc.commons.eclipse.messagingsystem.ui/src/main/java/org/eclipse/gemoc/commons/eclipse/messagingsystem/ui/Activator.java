@@ -40,6 +40,8 @@ public class Activator extends AbstractUIPlugin {
 
 	// protected MessagingSystem messaggingSystem;
 	protected EclipseConsoleIO consoleIO = null;
+	
+	protected static boolean isPluginFullyInitialized = false;
 
 	/**
 	 * The constructor
@@ -57,48 +59,56 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-
-		Job j = new Job("Waiting workbench to redirect system.out to console") {
-
-			@Override
-			protected IStatus run(IProgressMonitor monitor) {
-				final boolean[] workbenchAvailable = new boolean[] { false };
-				Display.getDefault().syncExec(new Runnable() {
-
-					@Override
-					public void run() {
-						if (PlatformUI.isWorkbenchRunning()
-								&& PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
-							workbenchAvailable[0] = true;
-						}
-
-					}
-				});
-				if (workbenchAvailable[0]) {
-					System.out.println("Workbench is available");
-					Display.getDefault().asyncExec(new Runnable() {
-
+		
+		this.getPreferenceStore(); // get preference store on start in order to avoid entering in the synchronized section later
+		Boolean mustCapture = getPreferenceStore()
+				.getBoolean(PreferenceConstants.P_CAPTURE_SYSTEM_ERROUT);
+		if(mustCapture) {
+			Job j = new Job("Waiting workbench to redirect system.out to console") {
+	
+				@Override
+				protected IStatus run(IProgressMonitor monitor) {
+					final boolean[] workbenchAvailable = new boolean[] { false };
+					Display.getDefault().syncExec(new Runnable() {
+	
 						@Override
 						public void run() {
-							Boolean mustCapture = getPreferenceStore()
-									.getBoolean(PreferenceConstants.P_CAPTURE_SYSTEM_ERROUT);
-							if (mustCapture) {
-								captureSystemOutAndErr();
+							if (PlatformUI.isWorkbenchRunning() && PlatformUI.getWorkbench() != null
+									&& PlatformUI.getWorkbench().getWorkbenchWindows().length > 0 && PlatformUI.getWorkbench().getActiveWorkbenchWindow() != null) {
+								workbenchAvailable[0] = true;
 							}
 						}
 					});
-				} else {
-					System.out.println("Waiting for the Workbench ...");
-					schedule(1000);
+					
+					if (workbenchAvailable[0]) {
+						Boolean mustCapture = getPreferenceStore()
+								.getBoolean(PreferenceConstants.P_CAPTURE_SYSTEM_ERROUT);
+						if(mustCapture) {
+							Display.getDefault().syncExec(new Runnable() {
+		
+								@Override
+								public void run() {
+									captureSystemOutAndErr();
+									isPluginFullyInitialized = true;
+								}
+							});
+						} else {
+							isPluginFullyInitialized = true;
+						}
+					} else {
+						System.out.println("Waiting for the Workbench ...");
+						schedule(1000);
+					}
+					return Status.OK_STATUS;
 				}
-				return Status.OK_STATUS;
-			}
-		};
-
-		j.schedule();
-
+			};
+	
+			j.schedule(200);
+		}
+		else {
+			isPluginFullyInitialized = true;
+		}
 	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -122,16 +132,26 @@ public class Activator extends AbstractUIPlugin {
 		return plugin;
 	}
 
-	// public MessagingSystem getMessaggingSystem() {
-	// return messaggingSystem;
-	// }
+
 
 	public void clearConsole() {
 		getConsoleIO().clear();
 	}
 
-	public ConsoleIO getConsoleIO() {
+	synchronized public ConsoleIO getConsoleIO() {
+		// makes sure that external call to getConsoleIO() occurs only when the plugin is fully operational
+		// ie. workbench is started and system.out is possibly redirected 
+		while (!isPluginFullyInitialized) {
+			try {
+				System.out.println("waiting messagingsystem.ui.Activator.isPluginFullyInitialized");
+				Thread.sleep(500);
+			} catch (InterruptedException e) {}
+		}
+		return getConsoleIOInternal();
+	}
+	private ConsoleIO getConsoleIOInternal() {
 		if (consoleIO == null) {
+			
 			String bundleSymbolicName = getBundle().getHeaders().get("Bundle-SymbolicName").toString();
 			String consoleUId = bundleSymbolicName + this.hashCode();
 			consoleIO = EclipseConsoleIOFactory.getInstance().getConsoleIO(consoleUId,
@@ -148,19 +168,20 @@ public class Activator extends AbstractUIPlugin {
 	 * default console
 	 */
 	public void captureSystemOutAndErr() {
-		Activator.getDefault().getConsoleIO().print("Redirecting System.out and System.err to this console.\n");
+
 		if (originalSystemOut != System.out) {
 			originalSystemOut = System.out;
 			TeeOutputStream teeOutputStream = new TeeOutputStream(originalSystemOut,
-					new EclipseConsoleOutputStream(Activator.getDefault().getConsoleIO(), false));
+					new EclipseConsoleOutputStream(Activator.getDefault().getConsoleIOInternal(), false));
 			System.setOut(new PrintStream(teeOutputStream));
 		}
 		if (originalSystemErr != System.err) {
 			originalSystemErr = System.err;
 			TeeOutputStream teeOutputStream = new TeeOutputStream(originalSystemErr,
-					new EclipseConsoleOutputStream(Activator.getDefault().getConsoleIO(), true));
+					new EclipseConsoleOutputStream(Activator.getDefault().getConsoleIOInternal(), true));
 			System.setErr(new PrintStream(teeOutputStream));
 		}
+		System.out.println("System.out and System.err copied to Eclipse console");
 	}
 
 	/**
